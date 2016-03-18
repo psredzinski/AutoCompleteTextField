@@ -178,6 +178,10 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource {
         
         // Optional setting for delegate if not setted in IB
         autoCompleteTextFieldWithDelimiter.autoCompleteTextFieldDataSource = self
+        autoCompleteTextFieldWithDelimiter.setDelimiter("@")
+        
+        // Show right side complete button
+        autoCompleteTextField.showAutoCompleteButtonWithViewMode(.WhileEditing)
     }
     
     override func didReceiveMemoryWarning() {
