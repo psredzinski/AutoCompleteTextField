@@ -1,0 +1,6 @@
+framework module Pods_AutoCompleteTextField_Example {
+  umbrella header "Pods-AutoCompleteTextField_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
