@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "AutoCompleteTextField"
   s.version          = "0.1.0"
-  s.summary          = "A short description of AutoCompleteTextField."
+  s.summary          = "A TextField Subclass that has auto completion feature from suggestion filtered from the data source provided by the user."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -20,11 +20,11 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = "https://github.com/<GITHUB_USERNAME>/AutoCompleteTextField"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  # s.screenshots     = "http://imgur.com/Hm0jK9C", "http://imgur.com/Rq1mOZ5"
   s.license          = 'MIT'
   s.author           = { "Neil Francis Ramirez Hipona" => "nferocious76@gmail.com" }
   s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/AutoCompleteTextField.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  # s.social_media_url = 'https://twitter.com/nferocious76'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
