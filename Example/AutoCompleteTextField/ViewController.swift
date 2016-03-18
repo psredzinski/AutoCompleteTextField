@@ -177,7 +177,7 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Optional setting for delegate if not setted in IB
-        autoCompleteTextField.autoCompleteTextFieldDataSource = self
+        autoCompleteTextFieldWithDelimiter.autoCompleteTextFieldDataSource = self
     }
     
     override func didReceiveMemoryWarning() {
