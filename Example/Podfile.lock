@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AutoCompleteTextField: 19a93a518c961817266297c6de66b86e25c157c5
+  AutoCompleteTextField: 824e90914afed8671412f702fc387cd94bff187f
 
 COCOAPODS: 0.38.2
