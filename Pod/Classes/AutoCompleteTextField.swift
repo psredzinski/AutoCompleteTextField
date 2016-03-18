@@ -89,7 +89,7 @@ public class AutoCompleteTextField: UITextField {
                 autoCompleteLbl.text = ""
             }
             
-            autoCompleteLbl.hidden = false
+            processAutoCompleteEvent()
         }
         
         return super.becomeFirstResponder()
