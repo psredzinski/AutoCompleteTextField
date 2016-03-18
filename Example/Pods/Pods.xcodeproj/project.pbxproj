@@ -15,9 +15,9 @@
 		936B130F50EBA58F5D3F8395B1FF0C0D /* Pods-AutoCompleteTextField_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DC7EAA6A124B7D3E04A98A186E8632 /* Pods-AutoCompleteTextField_Tests-dummy.m */; };
 		AB9534EBA8595337332D1EFE15454D58 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F979083B5B8D717F7576F12E1B9EE2EE /* Foundation.framework */; };
 		ADFF18A5E79B9746BD7D6823BFDFA66A /* AutoCompleteTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5FB4FB4C7CB1441660331FB0628863 /* AutoCompleteTextField-dummy.m */; };
-		B2854307BD73BB92CD6AD3B01C810DB9 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497AA94D2F11B0F7DD4C9CA92D99A87D /* ReplaceMe.swift */; };
 		BF2FADAD1FC0BCFC475D253D54650D8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F979083B5B8D717F7576F12E1B9EE2EE /* Foundation.framework */; };
 		D7C841A6F9FDB15F194B7F83DBA847F4 /* Pods-AutoCompleteTextField_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CEA93F64FD8F95D60C0168CBC5EFD2 /* Pods-AutoCompleteTextField_Example-dummy.m */; };
+		F53DCC661C9C8283007320B9 /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53DCC651C9C8283007320B9 /* AutoCompleteTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,6 @@
 		35DC7EAA6A124B7D3E04A98A186E8632 /* Pods-AutoCompleteTextField_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AutoCompleteTextField_Tests-dummy.m"; sourceTree = "<group>"; };
 		36713894DFEAA5840DA99DCB698C9D58 /* Pods-AutoCompleteTextField_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AutoCompleteTextField_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3A9B63A516A12C29E057154912489F88 /* Pods-AutoCompleteTextField_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AutoCompleteTextField_Example-resources.sh"; sourceTree = "<group>"; };
-		497AA94D2F11B0F7DD4C9CA92D99A87D /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		4AF481334C5B233EB4DEBE2509CD9068 /* AutoCompleteTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AutoCompleteTextField.xcconfig; sourceTree = "<group>"; };
 		5E55AE94B26E601B42165BB192805C2D /* Pods-AutoCompleteTextField_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AutoCompleteTextField_Example-umbrella.h"; sourceTree = "<group>"; };
 		6B5FB4FB4C7CB1441660331FB0628863 /* AutoCompleteTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AutoCompleteTextField-dummy.m"; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		DFAEE65F88EB1384E74ABCD2A6707AC0 /* Pods-AutoCompleteTextField_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-AutoCompleteTextField_Example.modulemap"; sourceTree = "<group>"; };
 		E68BBE82EB3D85EAAEA8935FFF513C96 /* AutoCompleteTextField-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "AutoCompleteTextField-Private.xcconfig"; sourceTree = "<group>"; };
 		F3CEA93F64FD8F95D60C0168CBC5EFD2 /* Pods-AutoCompleteTextField_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AutoCompleteTextField_Example-dummy.m"; sourceTree = "<group>"; };
+		F53DCC651C9C8283007320B9 /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
 		F979083B5B8D717F7576F12E1B9EE2EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -143,7 +143,7 @@
 		3D77AFFC04137435D6E7A7F5402D89CA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				497AA94D2F11B0F7DD4C9CA92D99A87D /* ReplaceMe.swift */,
+				F53DCC651C9C8283007320B9 /* AutoCompleteTextField.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -426,7 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADFF18A5E79B9746BD7D6823BFDFA66A /* AutoCompleteTextField-dummy.m in Sources */,
-				B2854307BD73BB92CD6AD3B01C810DB9 /* ReplaceMe.swift in Sources */,
+				F53DCC661C9C8283007320B9 /* AutoCompleteTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
