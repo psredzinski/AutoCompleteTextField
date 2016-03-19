@@ -17,6 +17,11 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 
+## Requirements
+
+- iOS 8.0+ / Mac OS X 10.9+
+- Xcode 7.2+
+
 
 ## Installation
 
@@ -33,7 +38,7 @@ Neil Francis Ramirez Hipona, nferocious76@gmail.com
 
 ### About
 
-This project was inpired by 'HTAutocompleteTextField' an Objc-C of the same feature.
+This project was inpired by 'HTAutocompleteTextField' an Objc-C framework of the same feature.
 
 ## License
 
