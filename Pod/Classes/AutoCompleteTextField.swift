@@ -81,7 +81,11 @@ public class AutoCompleteTextField: UITextField {
         
     }
     
+    
+    // MARK: - R
     override public func becomeFirstResponder() -> Bool {
+        let becomeFirstResponder = super.becomeFirstResponder()
+        
         if !autoCompleteDisabled {
             autoCompleteLbl.hidden = false
             
@@ -92,10 +96,11 @@ public class AutoCompleteTextField: UITextField {
             processAutoCompleteEvent()
         }
         
-        return super.becomeFirstResponder()
+        return becomeFirstResponder
     }
     
     override public func resignFirstResponder() -> Bool {
+        let resignFirstResponder = super.resignFirstResponder()
         
         if !autoCompleteDisabled {
             autoCompleteLbl.hidden = true
@@ -104,7 +109,7 @@ public class AutoCompleteTextField: UITextField {
             commitAutocompleteText()
         }
         
-        return super.resignFirstResponder()
+        return resignFirstResponder
     }
     
     
