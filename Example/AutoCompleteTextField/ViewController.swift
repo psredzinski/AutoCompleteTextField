@@ -181,7 +181,7 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource {
         autoCompleteTextFieldWithDelimiter.setDelimiter("@")
         
         // Show right side complete button
-        autoCompleteTextField.showAutoCompleteButtonWithViewMode(.WhileEditing)
+        autoCompleteTextField.showAutoCompleteButton(autoCompleteButtonViewMode: .WhileEditing)
     }
     
     override func didReceiveMemoryWarning() {
