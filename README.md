@@ -34,10 +34,10 @@ func autoCompleteTextFieldDataSource(autoCompleteTextField: AutoCompleteTextFiel
         
     return ["gmail.com", "hotmail.com", "domain.net"]
 }
-
 ```
 
 ## Requirements
+
 - iOS 8.0+ / Mac OS X 10.9+
 - Xcode 7.2+
 
