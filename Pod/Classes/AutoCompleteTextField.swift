@@ -193,14 +193,15 @@ public class AutoCompleteTextField: UITextField {
         
         let xOrigin = CGRectGetMaxX(textRect) + xOffsetCorrection
         let finalX = xOrigin + autocompleteTextRect.width
+        let adjustedHeight = textRectBounds.height - 1
         
         if finalX >= textRectBounds.width {
-            let autoCompleteRect = CGRectMake(textRectBounds.width, CGRectGetMinY(textRectBounds), 0, textRectBounds.height)
+            let autoCompleteRect = CGRectMake(textRectBounds.width, CGRectGetMinY(textRectBounds), 0, adjustedHeight)
             
             return autoCompleteRect
             
         }else{
-            let autoCompleteRect = CGRectMake(xOrigin, CGRectGetMinY(textRectBounds), autocompleteTextRect.width, textRectBounds.height)
+            let autoCompleteRect = CGRectMake(xOrigin, CGRectGetMinY(textRectBounds), autocompleteTextRect.width, adjustedHeight)
             
             return autoCompleteRect
         }
@@ -266,34 +267,8 @@ public class AutoCompleteTextField: UITextField {
         delimiter = NSCharacterSet(charactersInString: delimiterString)
     }
     
-    /// Show completion button
-    public func showAutoCompleteButtonWithViewMode(autoCompleteButtonViewMode: AutoCompleteButtonViewMode) {
-        
-        var buttonFrameH: CGFloat = 0.0
-        var buttonOriginY: CGFloat = 0.0
-        
-        if frame.height > defaultAutoCompleteButtonHeight {
-            buttonFrameH = defaultAutoCompleteButtonHeight
-            buttonOriginY = (frame.height - defaultAutoCompleteButtonHeight) / 2
-        }else{
-            buttonFrameH = frame.height
-            buttonOriginY = 0
-        }
-        
-        let autoCompleteButton = UIButton(type: .DetailDisclosure)
-        autoCompleteButton.frame = CGRectMake(0, buttonOriginY, defaultAutoCompleteButtonWidth, buttonFrameH)
-        autoCompleteButton.addTarget(self, action: "autoCompleteButtonDidTapped:", forControlEvents: .TouchUpInside)
-        
-        let containerFrame = CGRectMake(0, 0, defaultAutoCompleteButtonWidth, frame.height)
-        let autoCompleteButtonContainerView = UIView(frame: containerFrame)
-        autoCompleteButtonContainerView.addSubview(autoCompleteButton)
-        
-        rightView = autoCompleteButtonContainerView
-        rightViewMode = autoCompleteButtonViewMode
-    }
-    
     /// Show completion button with custom image
-    public func showAutoCompleteButtonWithImage(buttonImage: UIImage, autoCompleteButtonViewMode: AutoCompleteButtonViewMode) {
+    public func showAutoCompleteButton(buttonImage: UIImage? = UIImage(named: "check_icon"), autoCompleteButtonViewMode: AutoCompleteButtonViewMode) {
         
         var buttonFrameH: CGFloat = 0.0
         var buttonOriginY: CGFloat = 0.0
