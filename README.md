@@ -1,9 +1,9 @@
 # AutoCompleteTextField
 
-[![CI Status](http://b.repl.ca/v1/build-passed-brightgreen.png)](http://b.repl.ca/v1/build-passed-brightgreen.png)
-[![Version](http://b.repl.ca/v1/pod-v0.1.3-blue.png)](http://b.repl.ca/v1/pod-v0.1.3-blue.png)
-[![License](http://b.repl.ca/v1/Lisence-MIT-yellow.png)](http://b.repl.ca/v1/Lisence-MIT-yellow.png)
-[![Platform](http://b.repl.ca/v1/platform-ios-lightgrey.png)](http://b.repl.ca/v1/platform-ios-lightgrey.png)
+[![CI Status](https://img.shields.io/badge/build-passed-brightgreen.svg)](https://img.shields.io/badge/build-passed-brightgreen.svg)
+[![Version](https://img.shields.io/badge/pod-v0.1.4-blue.svg)](https://img.shields.io/badge/pod-v0.1.4-blue.svg)
+[![License](https://img.shields.io/badge/Lisence-MIT-yellow.svg)](https://img.shields.io/badge/Lisence-MIT-yellow.svg)
+[![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 
 ## Features
 - [x] Provides a subclass of UITextField that has suggestion from input
