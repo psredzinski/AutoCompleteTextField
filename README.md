@@ -1,9 +1,9 @@
 # AutoCompleteTextField
 
-[![CI Status](http://img.shields.io/travis/Neil Francis Ramirez Hipona/AutoCompleteTextField.svg?style=flat)](https://travis-ci.org/Neil Francis Ramirez Hipona/AutoCompleteTextField)
-[![Version](https://img.shields.io/cocoapods/v/AutoCompleteTextField.svg?style=flat)](http://cocoapods.org/pods/AutoCompleteTextField)
-[![License](https://img.shields.io/cocoapods/l/AutoCompleteTextField.svg?style=flat)](http://cocoapods.org/pods/AutoCompleteTextField)
-[![Platform](https://img.shields.io/cocoapods/p/AutoCompleteTextField.svg?style=flat)](http://cocoapods.org/pods/AutoCompleteTextField)
+[![CI Status](http://b.repl.ca/v1/build-passed-brightgreen.png)](http://b.repl.ca/v1/build-passed-brightgreen.png)
+[![Version](http://b.repl.ca/v1/pod-v0.1.3-blue.png)](http://b.repl.ca/v1/pod-v0.1.3-blue.png)
+[![License](http://b.repl.ca/v1/Lisence-MIT-yellow.png)](http://b.repl.ca/v1/Lisence-MIT-yellow.png)
+[![Platform](http://b.repl.ca/v1/platform-ios-lightgrey.png)](http://b.repl.ca/v1/platform-ios-lightgrey.png)
 
 ## Features
 - [x] Provides a subclass of UITextField that has suggestion from input
