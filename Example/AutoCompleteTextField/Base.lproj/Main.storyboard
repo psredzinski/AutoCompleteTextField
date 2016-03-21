@@ -17,8 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="gm" borderStyle="roundedRect" placeholder="AutoCompleteTextField" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JEZ-QB-1QP" customClass="AutoCompleteTextField" customModule="AutoCompleteTextField">
-                                <rect key="frame" x="20" y="100" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="gm" placeholder="AutoCompleteTextField" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JEZ-QB-1QP" customClass="AutoCompleteTextField" customModule="AutoCompleteTextField">
+                                <rect key="frame" x="20" y="100" width="560" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="9g7-Z8-0nS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -26,8 +29,11 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="xO1-sG-ZXi"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@gm" borderStyle="roundedRect" placeholder="AutoCompleteTextField+Delimiter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Llz-K2-NOo" customClass="AutoCompleteTextField" customModule="AutoCompleteTextField">
-                                <rect key="frame" x="20" y="138" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@gm" borderStyle="line" placeholder="AutoCompleteTextField+Delimiter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Llz-K2-NOo" customClass="AutoCompleteTextField" customModule="AutoCompleteTextField">
+                                <rect key="frame" x="20" y="143" width="560" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GrE-sy-N47"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -35,15 +41,42 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="sPB-bV-USw"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="gm" borderStyle="bezel" placeholder="AutoCompleteTextField" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bI-rQ-fAq" customClass="AutoCompleteTextField" customModule="AutoCompleteTextField">
+                                <rect key="frame" x="20" y="191" width="560" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="B2e-SW-yHm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="chg-4n-nTb"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="ZUJ-xQ-z0L"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ho" borderStyle="roundedRect" placeholder="AutoCompleteTextField+Delimiter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L2A-zR-sKu" customClass="AutoCompleteTextField" customModule="AutoCompleteTextField">
+                                <rect key="frame" x="20" y="249" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="rFB-Lx-rz9"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="RDh-NY-QOE"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Llz-K2-NOo" firstAttribute="top" secondItem="JEZ-QB-1QP" secondAttribute="bottom" constant="8" id="3Pl-vg-LTH"/>
+                            <constraint firstItem="9bI-rQ-fAq" firstAttribute="trailing" secondItem="Llz-K2-NOo" secondAttribute="trailing" id="IGi-YS-X13"/>
+                            <constraint firstItem="L2A-zR-sKu" firstAttribute="trailing" secondItem="9bI-rQ-fAq" secondAttribute="trailing" id="IcZ-eN-s6y"/>
                             <constraint firstItem="Llz-K2-NOo" firstAttribute="leading" secondItem="JEZ-QB-1QP" secondAttribute="leading" id="Q0a-gv-Eca"/>
+                            <constraint firstItem="L2A-zR-sKu" firstAttribute="leading" secondItem="9bI-rQ-fAq" secondAttribute="leading" id="SrQ-JU-gsR"/>
+                            <constraint firstItem="9bI-rQ-fAq" firstAttribute="top" secondItem="Llz-K2-NOo" secondAttribute="bottom" constant="8" id="b3k-ck-vc0"/>
                             <constraint firstAttribute="trailing" secondItem="JEZ-QB-1QP" secondAttribute="trailing" constant="20" id="dam-8e-54h"/>
                             <constraint firstItem="JEZ-QB-1QP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="80" id="fUI-Tj-SqM"/>
                             <constraint firstItem="Llz-K2-NOo" firstAttribute="trailing" secondItem="JEZ-QB-1QP" secondAttribute="trailing" id="kGL-J7-GBI"/>
+                            <constraint firstItem="9bI-rQ-fAq" firstAttribute="leading" secondItem="Llz-K2-NOo" secondAttribute="leading" id="qtq-8P-nxa"/>
                             <constraint firstItem="JEZ-QB-1QP" firstAttribute="leading" secondItem="7GF-4S-Dvc" secondAttribute="leading" constant="20" id="sVG-gR-rCM"/>
+                            <constraint firstItem="L2A-zR-sKu" firstAttribute="top" secondItem="9bI-rQ-fAq" secondAttribute="bottom" constant="8" id="sp7-Sj-aAR"/>
                         </constraints>
                     </view>
                     <connections>
