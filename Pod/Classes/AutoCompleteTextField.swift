@@ -141,32 +141,36 @@ public class AutoCompleteTextField: UITextField {
         
         let dataSource = autoCompleteTextFieldDataSource.autoCompleteTextFieldDataSource(self)
         
-        var suggestionStrings: [String] = []
-        
-        if ignoreCase {
-            suggestionStrings = dataSource.filter({ (stringToCompare) -> Bool in
-                return stringToCompare.lowercaseString.hasPrefix(textToLookFor.lowercaseString)
-            })
-        }else{
-            suggestionStrings = dataSource.filter({ (stringToCompare) -> Bool in
-                return stringToCompare.hasPrefix(textToLookFor)
-            })
+        let stringFilter = ignoreCase ? textToLookFor.lowercaseString : textToLookFor
+        let suggestedStrings: [String] = dataSource.filter { (suggestedString) -> Bool in
+            if ignoreCase {
+                return suggestedString.lowercaseString.hasPrefix(stringFilter)
+            }else{
+                return suggestedString.hasPrefix(stringFilter)
+            }
         }
         
-        if suggestionStrings.isEmpty {
+        if suggestedStrings.isEmpty {
             return ""
         }
         
         if isRandomSuggestion {
-            let maxSuggestionCount = suggestionStrings.count
+            let maxSuggestionCount = suggestedStrings.count
             let randomIdx = arc4random_uniform(UInt32(maxSuggestionCount))
-            let suggestedString = suggestionStrings[Int(randomIdx)]
+            let suggestedString = suggestedStrings[Int(randomIdx)]
             
-            return suggestedString.stringByReplacingCharactersInRange(suggestedString.rangeOfString(textToLookFor)!, withString: "")
+            return performStringReplacement(suggestedString, stringFilter: stringFilter)
         }else{
-            let suggestedString = suggestionStrings.first ?? ""
-            return suggestedString.stringByReplacingCharactersInRange(suggestedString.rangeOfString(textToLookFor)!, withString: "")
+            let suggestedString = suggestedStrings.first ?? ""
+            return performStringReplacement(suggestedString, stringFilter: stringFilter)
         }
+    }
+    
+    private func performStringReplacement(suggestedString: String, stringFilter: String) -> String {
+        guard let filterRange = suggestedString.rangeOfString(stringFilter) else { return "" }
+        
+        let finalString = suggestedString.stringByReplacingCharactersInRange(filterRange, withString: "")
+        return finalString
     }
     
     private func autocompleteBoundingRect(autocompleteString: String) -> CGRect {
