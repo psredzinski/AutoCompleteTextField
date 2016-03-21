@@ -23,7 +23,32 @@ public class AutoCompleteTextField: UITextField {
     
     private var autoCompleteLbl: UILabel!
     private var delimiter: NSCharacterSet?
-    private let xOffsetCorrection: CGFloat = 6.0
+
+    private var xOffsetCorrection: CGFloat {
+        get {
+            switch borderStyle {
+            case .Bezel, .RoundedRect:
+                return 6.0
+            case .Line:
+                return 1.0
+                
+            default:
+                return 0.0
+            }
+        }
+    }
+    
+    private var yOffsetCorrection: CGFloat {
+        get {
+            switch borderStyle {
+            case .Line, .RoundedRect:
+                return 0.5
+                
+            default:
+                return 0.0
+            }
+        }
+    }
 
     /// Data source
     public weak var autoCompleteTextFieldDataSource: AutoCompleteTextFieldDataSource?
@@ -196,16 +221,17 @@ public class AutoCompleteTextField: UITextField {
         let autocompleteTextRect = (autocompleteString as NSString).boundingRectWithSize(autoCompleteRectSize, options: drawingOptions, attributes: textAttributes, context: nil)
         
         let xOrigin = CGRectGetMaxX(textRect) + xOffsetCorrection
+        let autoCompleteLblFrame = autoCompleteLbl.frame
         let finalX = xOrigin + autocompleteTextRect.width
-        let adjustedHeight = textRectBounds.height - 1
-        
+        let finalY = CGRectGetMinY(textRectBounds) + ((textRectBounds.height - autoCompleteLblFrame.height) / 2) - yOffsetCorrection
+
         if finalX >= textRectBounds.width {
-            let autoCompleteRect = CGRectMake(textRectBounds.width, CGRectGetMinY(textRectBounds), 0, adjustedHeight)
+            let autoCompleteRect = CGRectMake(textRectBounds.width, finalY, 0, autoCompleteLblFrame.height)
             
             return autoCompleteRect
             
         }else{
-            let autoCompleteRect = CGRectMake(xOrigin, CGRectGetMinY(textRectBounds), autocompleteTextRect.width, adjustedHeight)
+            let autoCompleteRect = CGRectMake(xOrigin, finalY, autocompleteTextRect.width, autoCompleteLblFrame.height)
             
             return autoCompleteRect
         }
@@ -238,6 +264,7 @@ public class AutoCompleteTextField: UITextField {
     
     private func updateAutocompleteLabel(autocompleteString: String) {
         autoCompleteLbl.text = autocompleteString
+        autoCompleteLbl.sizeToFit()
         autoCompleteLbl.frame = autocompleteBoundingRect(autocompleteString)
     }
     
