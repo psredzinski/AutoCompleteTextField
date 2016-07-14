@@ -155,8 +155,8 @@ public class AutoCompleteTextField: UITextField {
     
     private func setupTargetObserver() {
         
-        removeTarget(self, action: "autoCompleteTextFieldDidChanged:", forControlEvents: .EditingChanged)
-        addTarget(self, action: "autoCompleteTextFieldDidChanged:", forControlEvents: .EditingChanged)
+        removeTarget(self, action: #selector(AutoCompleteTextField.autoCompleteTextFieldDidChanged(_:)), forControlEvents: .EditingChanged)
+        addTarget(self, action: #selector(AutoCompleteTextField.autoCompleteTextFieldDidChanged(_:)), forControlEvents: .EditingChanged)
     }
     
     private func performStringSuggestionsSearch(textToLookFor: String) -> String {
@@ -314,7 +314,7 @@ public class AutoCompleteTextField: UITextField {
         
         let autoCompleteButton = UIButton(frame: CGRectMake(0, buttonOriginY, defaultAutoCompleteButtonWidth, buttonFrameH))
         autoCompleteButton.setImage(buttonImage, forState: .Normal)
-        autoCompleteButton.addTarget(self, action: "autoCompleteButtonDidTapped:", forControlEvents: .TouchUpInside)
+        autoCompleteButton.addTarget(self, action: #selector(AutoCompleteTextField.autoCompleteButtonDidTapped(_:)), forControlEvents: .TouchUpInside)
         
         let containerFrame = CGRectMake(0, 0, defaultAutoCompleteButtonWidth, frame.height)
         let autoCompleteButtonContainerView = UIView(frame: containerFrame)
