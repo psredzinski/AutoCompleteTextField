@@ -141,12 +141,12 @@ public class AutoCompleteTextField: UITextField {
     // MARK: - Private Funtions
     private func prepareAutoCompleteTextFieldLayers() {
         
-        autoCompleteLbl = UILabel(frame: CGRectZero)
+        autoCompleteLbl = UILabel(frame: .zero)
         addSubview(autoCompleteLbl)
         
         autoCompleteLbl.font = font
-        autoCompleteLbl.backgroundColor = UIColor.clearColor()
-        autoCompleteLbl.textColor = UIColor.lightGrayColor()
+        autoCompleteLbl.backgroundColor = .clearColor()
+        autoCompleteLbl.textColor = .lightGrayColor()
         autoCompleteLbl.lineBreakMode = .ByClipping
         autoCompleteLbl.baselineAdjustment = .AlignCenters
         autoCompleteLbl.hidden = true
@@ -204,9 +204,9 @@ public class AutoCompleteTextField: UITextField {
         let textRectBounds = textRectForBounds(bounds)
         
         // get rect for actual text
-        guard let textRange = textRangeFromPosition(beginningOfDocument, toPosition: endOfDocument) else { return CGRectZero }
+        guard let textRange = textRangeFromPosition(beginningOfDocument, toPosition: endOfDocument) else { return .zero }
         
-        let textRect = CGRectIntegral(firstRectForRange(textRange))
+        let textRect = firstRectForRange(textRange).integral
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = .ByCharWrapping
@@ -217,21 +217,21 @@ public class AutoCompleteTextField: UITextField {
         
         let prefixTextRect = (text ?? "" as NSString).boundingRectWithSize(textRectBounds.size, options: drawingOptions, attributes: textAttributes, context: nil)
         
-        let autoCompleteRectSize = CGSizeMake(textRectBounds.width - prefixTextRect.width, textRectBounds.height)
+        let autoCompleteRectSize = CGSize(width: textRectBounds.width - prefixTextRect.width, height: textRectBounds.height)
         let autocompleteTextRect = (autocompleteString as NSString).boundingRectWithSize(autoCompleteRectSize, options: drawingOptions, attributes: textAttributes, context: nil)
         
-        let xOrigin = CGRectGetMaxX(textRect) + xOffsetCorrection
+        let xOrigin = textRect.maxX + xOffsetCorrection
         let autoCompleteLblFrame = autoCompleteLbl.frame
         let finalX = xOrigin + autocompleteTextRect.width
-        let finalY = CGRectGetMinY(textRectBounds) + ((textRectBounds.height - autoCompleteLblFrame.height) / 2) - yOffsetCorrection
+        let finalY = textRectBounds.minY + ((textRectBounds.height - autoCompleteLblFrame.height) / 2) - yOffsetCorrection
 
         if finalX >= textRectBounds.width {
-            let autoCompleteRect = CGRectMake(textRectBounds.width, finalY, 0, autoCompleteLblFrame.height)
+            let autoCompleteRect = CGRect(x: textRectBounds.width, y: finalY, width: 0, height: autoCompleteLblFrame.height)
             
             return autoCompleteRect
             
         }else{
-            let autoCompleteRect = CGRectMake(xOrigin, finalY, autocompleteTextRect.width, autoCompleteLblFrame.height)
+            let autoCompleteRect = CGRect(x: xOrigin, y: finalY, width: autocompleteTextRect.width, height: autoCompleteLblFrame.height)
             
             return autoCompleteRect
         }
@@ -312,11 +312,11 @@ public class AutoCompleteTextField: UITextField {
             buttonOriginY = 0
         }
         
-        let autoCompleteButton = UIButton(frame: CGRectMake(0, buttonOriginY, defaultAutoCompleteButtonWidth, buttonFrameH))
+        let autoCompleteButton = UIButton(frame: CGRect(x: 0, y: buttonOriginY, width: defaultAutoCompleteButtonWidth, height: buttonFrameH))
         autoCompleteButton.setImage(buttonImage, forState: .Normal)
         autoCompleteButton.addTarget(self, action: "autoCompleteButtonDidTapped:", forControlEvents: .TouchUpInside)
         
-        let containerFrame = CGRectMake(0, 0, defaultAutoCompleteButtonWidth, frame.height)
+        let containerFrame = CGRect(x: 0, y: 0, width: defaultAutoCompleteButtonWidth, height: frame.height)
         let autoCompleteButtonContainerView = UIView(frame: containerFrame)
         autoCompleteButtonContainerView.addSubview(autoCompleteButton)
         
