@@ -53,7 +53,7 @@ public class AutoCompleteTextField: UITextField {
     /// Data source
     public weak var autoCompleteTextFieldDataSource: AutoCompleteTextFieldDataSource?
 
-    @IBOutlet weak public var dataSource: AnyObject! {
+    @IBOutlet weak internal var dataSource: AnyObject! {
         didSet {
             autoCompleteTextFieldDataSource = dataSource as? AutoCompleteTextFieldDataSource
         }
@@ -278,14 +278,14 @@ public class AutoCompleteTextField: UITextField {
     
     // MARK: - Internal Controls
     
-    func autoCompleteButtonDidTapped(sender: UIButton) {
+    internal func autoCompleteButtonDidTapped(sender: UIButton) {
         endEditing(true)
         
         processAutoCompleteEvent()
         commitAutocompleteText()
     }
     
-    func autoCompleteTextFieldDidChanged(textField: UITextField) {
+    internal func autoCompleteTextFieldDidChanged(textField: UITextField) {
         
         processAutoCompleteEvent()
     }
