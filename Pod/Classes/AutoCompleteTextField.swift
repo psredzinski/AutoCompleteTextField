@@ -9,21 +9,31 @@
 import Foundation
 import UIKit
 
-private let defaultAutoCompleteButtonWidth: CGFloat = 30.0
-private let defaultAutoCompleteButtonHeight: CGFloat = 30.0
-
-public typealias AutoCompleteButtonViewMode = UITextFieldViewMode
-
-public protocol AutoCompleteTextFieldDataSource: NSObjectProtocol {
-    
-    func autoCompleteTextFieldDataSource(autoCompleteTextField: AutoCompleteTextField) -> [String]
-}
 
 public class AutoCompleteTextField: UITextField {
     
+    /// AutoCompleteTextField data source
+    public weak var autoCompleteTextFieldDataSource: AutoCompleteTextFieldDataSource?
+    
+    // AutoCompleteTextField data source accessible through IB
+    @IBOutlet weak internal var dataSource: AnyObject! {
+        didSet {
+            autoCompleteTextFieldDataSource = dataSource as? AutoCompleteTextFieldDataSource
+        }
+    }
+    
+    /// AutoCompleteTextField delegate
+    public weak var autoCompleteTextFieldDelegate: AutoCompleteTextFieldDelegate!
+    
+    // AutoCompleteTextField delegate accessible through IB
+    weak public override var delegate: UITextFieldDelegate? {
+        set (x) { autoCompleteTextFieldDelegate = x as? AutoCompleteTextFieldDelegate }
+        get { return autoCompleteTextFieldDelegate }
+    }
+    
     private var autoCompleteLbl: UILabel!
     private var delimiter: NSCharacterSet?
-
+    
     private var xOffsetCorrection: CGFloat {
         get {
             switch borderStyle {
@@ -49,15 +59,6 @@ public class AutoCompleteTextField: UITextField {
             }
         }
     }
-
-    /// Data source
-    public weak var autoCompleteTextFieldDataSource: AutoCompleteTextFieldDataSource?
-
-    @IBOutlet weak internal var dataSource: AnyObject! {
-        didSet {
-            autoCompleteTextFieldDataSource = dataSource as? AutoCompleteTextFieldDataSource
-        }
-    }
     
     /// Auto completion flag
     var autoCompleteDisabled: Bool = false
@@ -70,9 +71,7 @@ public class AutoCompleteTextField: UITextField {
     
     /// Text font settings
     override public var font: UIFont? {
-        didSet {
-            autoCompleteLbl.font = font
-        }
+        didSet { autoCompleteLbl.font = font }
     }
     
     override public var textColor: UIColor? {
@@ -86,15 +85,15 @@ public class AutoCompleteTextField: UITextField {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupTargetObserver()
         prepareAutoCompleteTextFieldLayers()
+        setupTargetObserver()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        setupTargetObserver()
         prepareAutoCompleteTextFieldLayers()
+        setupTargetObserver()
     }
     
     
@@ -103,7 +102,6 @@ public class AutoCompleteTextField: UITextField {
         
         prepareAutoCompleteTextFieldLayers()
         setupTargetObserver()
-        
     }
     
     
@@ -157,6 +155,8 @@ public class AutoCompleteTextField: UITextField {
         
         removeTarget(self, action: #selector(AutoCompleteTextField.autoCompleteTextFieldDidChanged(_:)), forControlEvents: .EditingChanged)
         addTarget(self, action: #selector(AutoCompleteTextField.autoCompleteTextFieldDidChanged(_:)), forControlEvents: .EditingChanged)
+        
+        super.delegate = self
     }
     
     private func performStringSuggestionsSearch(textToLookFor: String) -> String {
@@ -224,7 +224,7 @@ public class AutoCompleteTextField: UITextField {
         let autoCompleteLblFrame = autoCompleteLbl.frame
         let finalX = xOrigin + autocompleteTextRect.width
         let finalY = textRectBounds.minY + ((textRectBounds.height - autoCompleteLblFrame.height) / 2) - yOffsetCorrection
-
+        
         if finalX >= textRectBounds.width {
             let autoCompleteRect = CGRect(x: textRectBounds.width, y: finalY, width: 0, height: autoCompleteLblFrame.height)
             
@@ -236,7 +236,6 @@ public class AutoCompleteTextField: UITextField {
             return autoCompleteRect
         }
     }
-    
     
     private func processAutoCompleteEvent() {
         if autoCompleteDisabled {
