@@ -42,6 +42,9 @@ myTextField.autoCompleteTextFieldDataSource = self
 // Setting delimiter is optional. If setted, it will only look for suggestion if delimiter is found
 myTextField.setDelimiter("@")
 
+// 'autoCompleteTextFieldDelegate' acts like the default 'delegate' which 'delegate' is also accessible to the IB.
+myTextField.autoCompleteTextFieldDelegate = YourDelegate
+
 // Setting an autocompletion button with text field events
 myTextField.showAutoCompleteButton(autoCompleteButtonViewMode: .WhileEditing)
 
