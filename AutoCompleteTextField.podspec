@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "AutoCompleteTextField"
-  s.version          = "0.1.6"
+  s.version          = "0.1.7"
   s.summary          = "TextField Subclass with auto completion feature."
 
 # This description is used to generate tags and improve search results.
