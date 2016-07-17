@@ -82,7 +82,7 @@ public class AutoCompleteTextField: UITextField {
     
     // MARK: - Initialization
     
-    override public init(frame: CGRect) {
+    override private init(frame: CGRect) {
         super.init(frame: frame)
         
         prepareAutoCompleteTextFieldLayers()
@@ -96,7 +96,8 @@ public class AutoCompleteTextField: UITextField {
         setupTargetObserver()
     }
     
-    convenience public init(frame: CGRect, autoCompleteTextFieldDataSource dataSource: AutoCompleteTextFieldDataSource!, autoCompleteTextFieldDelegate delegate: AutoCompleteTextFieldDelegate!) {
+    /// Initialize `AutoCompleteTextField` with `AutoCompleteTextFieldDataSource` and optional `AutoCompleteTextFieldDelegate`
+    convenience public init(frame: CGRect, autoCompleteTextFieldDataSource dataSource: AutoCompleteTextFieldDataSource, autoCompleteTextFieldDelegate delegate: AutoCompleteTextFieldDelegate! = nil) {
         self.init(frame: frame)
         
         autoCompleteTextFieldDataSource = dataSource
