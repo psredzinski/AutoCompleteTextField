@@ -2,7 +2,7 @@
 
 [![CI Status](https://img.shields.io/badge/build-passed-brightgreen.svg)](https://img.shields.io/badge/build-passed-brightgreen.svg)
 [![Version](https://img.shields.io/badge/pod-v0.1.5-blue.svg)](https://img.shields.io/badge/pod-v0.1.5-blue.svg)
-[![License](https://img.shields.io/badge/Lisence-MIT-yellow.svg)](https://img.shields.io/badge/Lisence-MIT-yellow.svg)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://img.shields.io/badge/Lisence-MIT-yellow.svg)
 [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 
 ## Features
@@ -34,6 +34,9 @@ Create a `Cartfile` that lists the framework and run `carthage bootstrap`. Follo
 github "nferocious76/AutoCompleteTextField"
 ```
 
+#### Manually
+1. Download and drop ```/Pod/Classes```folder in your project.  
+2. Congratulations!  
 
 ## Usage
 
