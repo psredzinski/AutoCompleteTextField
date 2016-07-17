@@ -96,6 +96,15 @@ public class AutoCompleteTextField: UITextField {
         setupTargetObserver()
     }
     
+    convenience init(frame: CGRect, autoCompleteTextFieldDataSource dataSource: AutoCompleteTextFieldDataSource, autoCompleteTextFieldDelegate delegate: AutoCompleteTextFieldDelegate) {
+        self.init(frame: frame)
+        
+        autoCompleteTextFieldDataSource = dataSource
+        autoCompleteTextFieldDelegate = delegate
+        
+        prepareAutoCompleteTextFieldLayers()
+        setupTargetObserver()
+    }
     
     override public func awakeFromNib() {
         super.awakeFromNib()
