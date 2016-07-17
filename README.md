@@ -20,16 +20,22 @@
 
 ## Installation
 
-AutoCompleteTextField is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+#### CocoaPods
+You can use [CocoaPods](http://cocoapods.org/) to install `AutoCompleteTextField` by adding it to your `Podfile`:
 
 ```ruby
 pod "AutoCompleteTextField"
 ```
 
-## Usage
+#### Carthage
+Create a `Cartfile` that lists the framework and run `carthage bootstrap`. Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add `$(SRCROOT)/Carthage/Build/iOS/YourLibrary.framework` to an iOS project.
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+```
+github "nferocious76/AutoCompleteTextField"
+```
+
+
+## Usage
 
 ```Swift
 
@@ -55,6 +61,9 @@ func autoCompleteTextFieldDataSource(autoCompleteTextField: AutoCompleteTextFiel
 }
 
 ```
+
+## Contribute
+We would love for you to contribute to `AutoCompleteTextField`. See the [LICENSE](https://github.com/nferocious76/AutoCompleteTextField/blob/master/LICENSE) file for more info.
 
 ## Author
 
