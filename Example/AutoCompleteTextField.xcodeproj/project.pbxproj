@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0ABC9361FE7BB1B0852C8D64 /* Pods_AutoCompleteTextField_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7414C7AEDE12E2E39FA0EB13 /* Pods_AutoCompleteTextField_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		43D408BBA405344BA24DB8B6 /* Pods_AutoCompleteTextField_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1FFA4D5226AE314A3E1BB3 /* Pods_AutoCompleteTextField_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		ABDF83E6E58C5C6FF7B5CCDA /* Pods_AutoCompleteTextField_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82E6B4A3D20876386FFF0B7 /* Pods_AutoCompleteTextField_Tests.framework */; };
+		BA29EC6CFD2ED0B92F3448C6 /* Pods_AutoCompleteTextField_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C5301B585551C53ECD4DD3 /* Pods_AutoCompleteTextField_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,9 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B1FFA4D5226AE314A3E1BB3 /* Pods_AutoCompleteTextField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoCompleteTextField_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B39F06DA023D2D3E9A025AB /* Pods-AutoCompleteTextField_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCompleteTextField_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoCompleteTextField_Example/Pods-AutoCompleteTextField_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		5B2D072C6B171D175E55B9E3 /* Pods-AutoCompleteTextField_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCompleteTextField_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoCompleteTextField_Tests/Pods-AutoCompleteTextField_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		17C5301B585551C53ECD4DD3 /* Pods_AutoCompleteTextField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoCompleteTextField_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4E64DDFCD5C145C5ED8141 /* AutoCompleteTextField.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AutoCompleteTextField.podspec; path = ../AutoCompleteTextField.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* AutoCompleteTextField_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoCompleteTextField_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,11 +40,13 @@
 		607FACE51AFB9204008FA782 /* AutoCompleteTextField_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoCompleteTextField_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		651D3C0C3080C0E54BC0ED3B /* Pods-AutoCompleteTextField_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCompleteTextField_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoCompleteTextField_Example/Pods-AutoCompleteTextField_Example.release.xcconfig"; sourceTree = "<group>"; };
 		71924159757F4AB9DC2ED095 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		7414C7AEDE12E2E39FA0EB13 /* Pods_AutoCompleteTextField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoCompleteTextField_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D48E3304E54C123178056EF /* Pods-AutoCompleteTextField_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCompleteTextField_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoCompleteTextField_Example/Pods-AutoCompleteTextField_Example.release.xcconfig"; sourceTree = "<group>"; };
+		726789C5EAA36CFFB463E190 /* Pods-AutoCompleteTextField_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCompleteTextField_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoCompleteTextField_Tests/Pods-AutoCompleteTextField_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A82E6B4A3D20876386FFF0B7 /* Pods_AutoCompleteTextField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoCompleteTextField_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E84DB578C3FFC175EE2EBDA1 /* Pods-AutoCompleteTextField_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCompleteTextField_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoCompleteTextField_Example/Pods-AutoCompleteTextField_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		EA229FEBCDD2B6088C57EF39 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		F715077A2CBF622D06170245 /* Pods-AutoCompleteTextField_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCompleteTextField_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoCompleteTextField_Tests/Pods-AutoCompleteTextField_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F457A2F76CC4C18A939B3148 /* Pods-AutoCompleteTextField_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCompleteTextField_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoCompleteTextField_Tests/Pods-AutoCompleteTextField_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43D408BBA405344BA24DB8B6 /* Pods_AutoCompleteTextField_Example.framework in Frameworks */,
+				BA29EC6CFD2ED0B92F3448C6 /* Pods_AutoCompleteTextField_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ABC9361FE7BB1B0852C8D64 /* Pods_AutoCompleteTextField_Tests.framework in Frameworks */,
+				ABDF83E6E58C5C6FF7B5CCDA /* Pods_AutoCompleteTextField_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +76,8 @@
 				607FACD21AFB9204008FA782 /* Example for AutoCompleteTextField */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				E7FEAC55E566E499BAC67A1D /* Pods */,
-				943CFCA2F9F539C34DAEDD62 /* Frameworks */,
+				E0F765F18B6C91499729E570 /* Pods */,
+				DE71ED6CB6666C99AC6AB1AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,22 +139,22 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		943CFCA2F9F539C34DAEDD62 /* Frameworks */ = {
+		DE71ED6CB6666C99AC6AB1AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0B1FFA4D5226AE314A3E1BB3 /* Pods_AutoCompleteTextField_Example.framework */,
-				7414C7AEDE12E2E39FA0EB13 /* Pods_AutoCompleteTextField_Tests.framework */,
+				17C5301B585551C53ECD4DD3 /* Pods_AutoCompleteTextField_Example.framework */,
+				A82E6B4A3D20876386FFF0B7 /* Pods_AutoCompleteTextField_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E7FEAC55E566E499BAC67A1D /* Pods */ = {
+		E0F765F18B6C91499729E570 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4B39F06DA023D2D3E9A025AB /* Pods-AutoCompleteTextField_Example.debug.xcconfig */,
-				8D48E3304E54C123178056EF /* Pods-AutoCompleteTextField_Example.release.xcconfig */,
-				F715077A2CBF622D06170245 /* Pods-AutoCompleteTextField_Tests.debug.xcconfig */,
-				5B2D072C6B171D175E55B9E3 /* Pods-AutoCompleteTextField_Tests.release.xcconfig */,
+				E84DB578C3FFC175EE2EBDA1 /* Pods-AutoCompleteTextField_Example.debug.xcconfig */,
+				651D3C0C3080C0E54BC0ED3B /* Pods-AutoCompleteTextField_Example.release.xcconfig */,
+				726789C5EAA36CFFB463E190 /* Pods-AutoCompleteTextField_Tests.debug.xcconfig */,
+				F457A2F76CC4C18A939B3148 /* Pods-AutoCompleteTextField_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -166,12 +166,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "AutoCompleteTextField_Example" */;
 			buildPhases = (
-				21D7D40D7E0A2AE8DC4E24C1 /* Check Pods Manifest.lock */,
+				DD2B5928BB6077DF5EC67C3D /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				E286C2C9B29C395F9469EE37 /* Embed Pods Frameworks */,
-				8CDE707C13D04ED18987E7DB /* Copy Pods Resources */,
+				4F68BF06E54AF92B55818114 /* [CP] Embed Pods Frameworks */,
+				D2B2B4390269E22D7F568647 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,12 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "AutoCompleteTextField_Tests" */;
 			buildPhases = (
-				6C961B2B45DDA91D9C5A83EF /* Check Pods Manifest.lock */,
+				DB08AEDA9CFBD60D37321778 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				E28E15A4D73FD74634A44D24 /* Embed Pods Frameworks */,
-				76A9A4FA8BEC885A9B2E7BA6 /* Copy Pods Resources */,
+				4F88CD25DFEAAA60C3F6BDB1 /* [CP] Embed Pods Frameworks */,
+				511A0B3D95BC5A889E17995A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,74 +262,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21D7D40D7E0A2AE8DC4E24C1 /* Check Pods Manifest.lock */ = {
+		4F68BF06E54AF92B55818114 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6C961B2B45DDA91D9C5A83EF /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		76A9A4FA8BEC885A9B2E7BA6 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoCompleteTextField_Tests/Pods-AutoCompleteTextField_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8CDE707C13D04ED18987E7DB /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoCompleteTextField_Example/Pods-AutoCompleteTextField_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E286C2C9B29C395F9469EE37 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,19 +277,79 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoCompleteTextField_Example/Pods-AutoCompleteTextField_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E28E15A4D73FD74634A44D24 /* Embed Pods Frameworks */ = {
+		4F88CD25DFEAAA60C3F6BDB1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoCompleteTextField_Tests/Pods-AutoCompleteTextField_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		511A0B3D95BC5A889E17995A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoCompleteTextField_Tests/Pods-AutoCompleteTextField_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2B2B4390269E22D7F568647 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoCompleteTextField_Example/Pods-AutoCompleteTextField_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB08AEDA9CFBD60D37321778 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DD2B5928BB6077DF5EC67C3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -486,7 +486,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B39F06DA023D2D3E9A025AB /* Pods-AutoCompleteTextField_Example.debug.xcconfig */;
+			baseConfigurationReference = E84DB578C3FFC175EE2EBDA1 /* Pods-AutoCompleteTextField_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AutoCompleteTextField/Info.plist;
@@ -499,7 +499,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D48E3304E54C123178056EF /* Pods-AutoCompleteTextField_Example.release.xcconfig */;
+			baseConfigurationReference = 651D3C0C3080C0E54BC0ED3B /* Pods-AutoCompleteTextField_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AutoCompleteTextField/Info.plist;
@@ -512,7 +512,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F715077A2CBF622D06170245 /* Pods-AutoCompleteTextField_Tests.debug.xcconfig */;
+			baseConfigurationReference = 726789C5EAA36CFFB463E190 /* Pods-AutoCompleteTextField_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -533,7 +533,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B2D072C6B171D175E55B9E3 /* Pods-AutoCompleteTextField_Tests.release.xcconfig */;
+			baseConfigurationReference = F457A2F76CC4C18A939B3148 /* Pods-AutoCompleteTextField_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

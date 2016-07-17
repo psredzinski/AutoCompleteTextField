@@ -183,6 +183,11 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
         
         // Show right side complete button
         autoCompleteTextField.showAutoCompleteButton(autoCompleteButtonViewMode: .WhileEditing)
+        
+        // Initializing with datasource and delegate
+        let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), autoCompleteTextFieldDataSource: self, autoCompleteTextFieldDelegate: nil)
+        textFieldWithDelegateAndDataSource.backgroundColor = .redColor()
+        view.addSubview(textFieldWithDelegateAndDataSource)
     }
     
     override func didReceiveMemoryWarning() {
