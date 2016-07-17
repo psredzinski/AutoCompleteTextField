@@ -185,7 +185,7 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
         autoCompleteTextField.showAutoCompleteButton(autoCompleteButtonViewMode: .WhileEditing)
         
         // Initializing with datasource and delegate
-        let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), autoCompleteTextFieldDataSource: self, autoCompleteTextFieldDelegate: nil)
+        let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), autoCompleteTextFieldDataSource: self)
         textFieldWithDelegateAndDataSource.backgroundColor = .redColor()
         view.addSubview(textFieldWithDelegateAndDataSource)
     }
