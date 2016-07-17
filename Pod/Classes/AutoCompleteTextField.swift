@@ -96,7 +96,7 @@ public class AutoCompleteTextField: UITextField {
         setupTargetObserver()
     }
     
-    convenience init(frame: CGRect, autoCompleteTextFieldDataSource dataSource: AutoCompleteTextFieldDataSource, autoCompleteTextFieldDelegate delegate: AutoCompleteTextFieldDelegate) {
+    convenience public init(frame: CGRect, autoCompleteTextFieldDataSource dataSource: AutoCompleteTextFieldDataSource!, autoCompleteTextFieldDelegate delegate: AutoCompleteTextFieldDelegate!) {
         self.init(frame: frame)
         
         autoCompleteTextFieldDataSource = dataSource
