@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/badge/Lisence-MIT-yellow.svg)](https://img.shields.io/badge/Lisence-MIT-yellow.svg)
 [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 
+![ezgif com-resize 1](https://cloud.githubusercontent.com/assets/6511079/16903266/0f2c58e2-4c50-11e6-827c-57b47992c9b2.gif)
+
 ## Features
 - [x] Provides a subclass of UITextField that has suggestion from input
 - [x] Data suggestion are provided by users
