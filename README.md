@@ -60,6 +60,9 @@ func autoCompleteTextFieldDataSource(autoCompleteTextField: AutoCompleteTextFiel
     return ["gmail.com", "hotmail.com", "domain.net"]
 }
 
+// Initializing with datasource
+let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), autoCompleteTextFieldDataSource: self)
+
 ```
 
 ## Contribute
