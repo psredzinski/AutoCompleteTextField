@@ -12,8 +12,9 @@ import AutoCompleteTextField
 
 class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCompleteTextFieldDelegate {
     
-    @IBOutlet weak var autoCompleteTextField: AutoCompleteTextField!
-    @IBOutlet weak var autoCompleteTextFieldWithDelimiter: AutoCompleteTextField!
+    @IBOutlet weak var txtEmail: AutoCompleteTextField!
+    @IBOutlet weak var txtReEmail: AutoCompleteTextField!
+    @IBOutlet weak var txtPassword: AutoCompleteTextField!
     
     let domainNames = ["gmail.com",
                        "yahoo.com",
@@ -32,17 +33,23 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
         // Do any additional setup after loading the view, typically from a nib.
         
         // Optional setting for delegate if not setted in IB
-        autoCompleteTextFieldWithDelimiter.autoCompleteTextFieldDataSource = self
-        autoCompleteTextFieldWithDelimiter.setDelimiter("@")
-        autoCompleteTextFieldWithDelimiter.autoCompleteTextFieldDelegate = self
-        
+        txtEmail.autoCompleteTextFieldDataSource = self
+        txtReEmail.autoCompleteTextFieldDataSource = self
+
+        txtEmail.setDelimiter("@")
+        txtReEmail.setDelimiter("@")
+
+        txtEmail.autoCompleteTextFieldDelegate = self
+        txtReEmail.autoCompleteTextFieldDelegate = self
+
         // Show right side complete button
-        autoCompleteTextField.showAutoCompleteButton(autoCompleteButtonViewMode: .WhileEditing)
-        
+        txtEmail.showAutoCompleteButton(autoCompleteButtonViewMode: .WhileEditing)
+        txtReEmail.showAutoCompleteButton(autoCompleteButtonViewMode: .WhileEditing)
+
         // Initializing with datasource and delegate
-        let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), autoCompleteTextFieldDataSource: self)
-        textFieldWithDelegateAndDataSource.backgroundColor = .redColor()
-        view.addSubview(textFieldWithDelegateAndDataSource)
+//        let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), autoCompleteTextFieldDataSource: self)
+//        textFieldWithDelegateAndDataSource.backgroundColor = .redColor()
+//        view.addSubview(textFieldWithDelegateAndDataSource)
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,16 +64,16 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
         return domainNames
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-
-        
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        
-    }
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        if textField == txtEmail {
+            txtReEmail.becomeFirstResponder()
+        } else if textField == txtReEmail {
+            txtPassword.becomeFirstResponder()
+        } else {
+            txtPassword.resignFirstResponder()
+        }
+        
         return true
     }
     
