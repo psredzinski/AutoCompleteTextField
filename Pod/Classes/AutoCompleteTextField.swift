@@ -9,21 +9,31 @@
 import Foundation
 import UIKit
 
-private let defaultAutoCompleteButtonWidth: CGFloat = 30.0
-private let defaultAutoCompleteButtonHeight: CGFloat = 30.0
-
-public typealias AutoCompleteButtonViewMode = UITextFieldViewMode
-
-public protocol AutoCompleteTextFieldDataSource: NSObjectProtocol {
-    
-    func autoCompleteTextFieldDataSource(autoCompleteTextField: AutoCompleteTextField) -> [String]
-}
 
 public class AutoCompleteTextField: UITextField {
     
+    /// AutoCompleteTextField data source
+    public weak var autoCompleteTextFieldDataSource: AutoCompleteTextFieldDataSource?
+    
+    // AutoCompleteTextField data source accessible through IB
+    @IBOutlet weak internal var dataSource: AnyObject! {
+        didSet {
+            autoCompleteTextFieldDataSource = dataSource as? AutoCompleteTextFieldDataSource
+        }
+    }
+    
+    /// AutoCompleteTextField delegate
+    public weak var autoCompleteTextFieldDelegate: AutoCompleteTextFieldDelegate!
+    
+    // AutoCompleteTextField delegate accessible through IB
+    weak public override var delegate: UITextFieldDelegate? {
+        set (x) { autoCompleteTextFieldDelegate = x as? AutoCompleteTextFieldDelegate }
+        get { return autoCompleteTextFieldDelegate }
+    }
+    
     private var autoCompleteLbl: UILabel!
     private var delimiter: NSCharacterSet?
-
+    
     private var xOffsetCorrection: CGFloat {
         get {
             switch borderStyle {
@@ -49,15 +59,6 @@ public class AutoCompleteTextField: UITextField {
             }
         }
     }
-
-    /// Data source
-    public weak var autoCompleteTextFieldDataSource: AutoCompleteTextFieldDataSource?
-
-    @IBOutlet weak public var dataSource: AnyObject! {
-        didSet {
-            autoCompleteTextFieldDataSource = dataSource as? AutoCompleteTextFieldDataSource
-        }
-    }
     
     /// Auto completion flag
     var autoCompleteDisabled: Bool = false
@@ -70,9 +71,7 @@ public class AutoCompleteTextField: UITextField {
     
     /// Text font settings
     override public var font: UIFont? {
-        didSet {
-            autoCompleteLbl.font = font
-        }
+        didSet { autoCompleteLbl.font = font }
     }
     
     override public var textColor: UIColor? {
@@ -83,27 +82,36 @@ public class AutoCompleteTextField: UITextField {
     
     // MARK: - Initialization
     
-    override public init(frame: CGRect) {
+    override private init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupTargetObserver()
         prepareAutoCompleteTextFieldLayers()
+        setupTargetObserver()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        setupTargetObserver()
         prepareAutoCompleteTextFieldLayers()
+        setupTargetObserver()
     }
     
+    /// Initialize `AutoCompleteTextField` with `AutoCompleteTextFieldDataSource` and optional `AutoCompleteTextFieldDelegate`
+    convenience public init(frame: CGRect, autoCompleteTextFieldDataSource dataSource: AutoCompleteTextFieldDataSource, autoCompleteTextFieldDelegate delegate: AutoCompleteTextFieldDelegate! = nil) {
+        self.init(frame: frame)
+        
+        autoCompleteTextFieldDataSource = dataSource
+        autoCompleteTextFieldDelegate = delegate
+        
+        prepareAutoCompleteTextFieldLayers()
+        setupTargetObserver()
+    }
     
     override public func awakeFromNib() {
         super.awakeFromNib()
         
         prepareAutoCompleteTextFieldLayers()
         setupTargetObserver()
-        
     }
     
     
@@ -141,12 +149,12 @@ public class AutoCompleteTextField: UITextField {
     // MARK: - Private Funtions
     private func prepareAutoCompleteTextFieldLayers() {
         
-        autoCompleteLbl = UILabel(frame: CGRectZero)
+        autoCompleteLbl = UILabel(frame: .zero)
         addSubview(autoCompleteLbl)
         
         autoCompleteLbl.font = font
-        autoCompleteLbl.backgroundColor = UIColor.clearColor()
-        autoCompleteLbl.textColor = UIColor.lightGrayColor()
+        autoCompleteLbl.backgroundColor = .clearColor()
+        autoCompleteLbl.textColor = .lightGrayColor()
         autoCompleteLbl.lineBreakMode = .ByClipping
         autoCompleteLbl.baselineAdjustment = .AlignCenters
         autoCompleteLbl.hidden = true
@@ -157,6 +165,8 @@ public class AutoCompleteTextField: UITextField {
         
         removeTarget(self, action: #selector(AutoCompleteTextField.autoCompleteTextFieldDidChanged(_:)), forControlEvents: .EditingChanged)
         addTarget(self, action: #selector(AutoCompleteTextField.autoCompleteTextFieldDidChanged(_:)), forControlEvents: .EditingChanged)
+        
+        super.delegate = self
     }
     
     private func performStringSuggestionsSearch(textToLookFor: String) -> String {
@@ -204,9 +214,9 @@ public class AutoCompleteTextField: UITextField {
         let textRectBounds = textRectForBounds(bounds)
         
         // get rect for actual text
-        guard let textRange = textRangeFromPosition(beginningOfDocument, toPosition: endOfDocument) else { return CGRectZero }
+        guard let textRange = textRangeFromPosition(beginningOfDocument, toPosition: endOfDocument) else { return .zero }
         
-        let textRect = CGRectIntegral(firstRectForRange(textRange))
+        let textRect = firstRectForRange(textRange).integral
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = .ByCharWrapping
@@ -217,26 +227,25 @@ public class AutoCompleteTextField: UITextField {
         
         let prefixTextRect = (text ?? "" as NSString).boundingRectWithSize(textRectBounds.size, options: drawingOptions, attributes: textAttributes, context: nil)
         
-        let autoCompleteRectSize = CGSizeMake(textRectBounds.width - prefixTextRect.width, textRectBounds.height)
+        let autoCompleteRectSize = CGSize(width: textRectBounds.width - prefixTextRect.width, height: textRectBounds.height)
         let autocompleteTextRect = (autocompleteString as NSString).boundingRectWithSize(autoCompleteRectSize, options: drawingOptions, attributes: textAttributes, context: nil)
         
-        let xOrigin = CGRectGetMaxX(textRect) + xOffsetCorrection
+        let xOrigin = textRect.maxX + xOffsetCorrection
         let autoCompleteLblFrame = autoCompleteLbl.frame
         let finalX = xOrigin + autocompleteTextRect.width
-        let finalY = CGRectGetMinY(textRectBounds) + ((textRectBounds.height - autoCompleteLblFrame.height) / 2) - yOffsetCorrection
-
+        let finalY = textRectBounds.minY + ((textRectBounds.height - autoCompleteLblFrame.height) / 2) - yOffsetCorrection
+        
         if finalX >= textRectBounds.width {
-            let autoCompleteRect = CGRectMake(textRectBounds.width, finalY, 0, autoCompleteLblFrame.height)
+            let autoCompleteRect = CGRect(x: textRectBounds.width, y: finalY, width: 0, height: autoCompleteLblFrame.height)
             
             return autoCompleteRect
             
         }else{
-            let autoCompleteRect = CGRectMake(xOrigin, finalY, autocompleteTextRect.width, autoCompleteLblFrame.height)
+            let autoCompleteRect = CGRect(x: xOrigin, y: finalY, width: autocompleteTextRect.width, height: autoCompleteLblFrame.height)
             
             return autoCompleteRect
         }
     }
-    
     
     private func processAutoCompleteEvent() {
         if autoCompleteDisabled {
@@ -278,14 +287,14 @@ public class AutoCompleteTextField: UITextField {
     
     // MARK: - Internal Controls
     
-    func autoCompleteButtonDidTapped(sender: UIButton) {
+    internal func autoCompleteButtonDidTapped(sender: UIButton) {
         endEditing(true)
         
         processAutoCompleteEvent()
         commitAutocompleteText()
     }
     
-    func autoCompleteTextFieldDidChanged(textField: UITextField) {
+    internal func autoCompleteTextFieldDidChanged(textField: UITextField) {
         
         processAutoCompleteEvent()
     }
@@ -312,11 +321,11 @@ public class AutoCompleteTextField: UITextField {
             buttonOriginY = 0
         }
         
-        let autoCompleteButton = UIButton(frame: CGRectMake(0, buttonOriginY, defaultAutoCompleteButtonWidth, buttonFrameH))
+        let autoCompleteButton = UIButton(frame: CGRect(x: 0, y: buttonOriginY, width: defaultAutoCompleteButtonWidth, height: buttonFrameH))
         autoCompleteButton.setImage(buttonImage, forState: .Normal)
         autoCompleteButton.addTarget(self, action: #selector(AutoCompleteTextField.autoCompleteButtonDidTapped(_:)), forControlEvents: .TouchUpInside)
         
-        let containerFrame = CGRectMake(0, 0, defaultAutoCompleteButtonWidth, frame.height)
+        let containerFrame = CGRect(x: 0, y: 0, width: defaultAutoCompleteButtonWidth, height: frame.height)
         let autoCompleteButtonContainerView = UIView(frame: containerFrame)
         autoCompleteButtonContainerView.addSubview(autoCompleteButton)
         
