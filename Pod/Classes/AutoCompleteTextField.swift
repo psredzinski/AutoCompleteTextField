@@ -172,9 +172,14 @@ public class AutoCompleteTextField: UITextField {
     private func performStringSuggestionsSearch(textToLookFor: String) -> String {
         
         // handle nil data source
-        guard let autoCompleteTextFieldDataSource = autoCompleteTextFieldDataSource else { return "" }
+        guard let autoCompleteTextFieldDataSource = autoCompleteTextFieldDataSource else { return processDataSource(SupportedDomainNames, textToLookFor: textToLookFor) }
         
         let dataSource = autoCompleteTextFieldDataSource.autoCompleteTextFieldDataSource(self)
+        
+        return processDataSource(dataSource, textToLookFor: textToLookFor)
+    }
+    
+    private func processDataSource(dataSource: [String], textToLookFor: String) -> String {
         
         let stringFilter = ignoreCase ? textToLookFor.lowercaseString : textToLookFor
         let suggestedStrings: [String] = dataSource.filter { (suggestedString) -> Bool in
