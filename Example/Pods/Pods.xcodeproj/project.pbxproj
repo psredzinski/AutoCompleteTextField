@@ -20,6 +20,7 @@
 		D2020BB912821FB5A8434A129B2FE746 /* Pods-AutoCompleteTextField_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B4A6F22E003B632A8857FFE283B81DE /* Pods-AutoCompleteTextField_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D90FEA0274BB7E6A178342124A1247BF /* AutoCompleteTextFieldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF52A5E009F2CC4BC6EAFCE6D41A006 /* AutoCompleteTextFieldConstants.swift */; };
 		DA58BDE2DD9BA2332F058AF9693D33E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		F585134F1D42658A000DB7BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F585134E1D42658A000DB7BF /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		D2DD9E1A4194D55F6E35573DE52FC6EA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFAEE65F88EB1384E74ABCD2A6707AC0 /* Pods-AutoCompleteTextField_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-AutoCompleteTextField_Example.modulemap"; sourceTree = "<group>"; };
 		F48DAD2F8827FCF75B8074182A7DDFDA /* AutoCompleteTextField.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoCompleteTextField.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		F585134E1D42658A000DB7BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F6912EBE5679FF365B06077EB44DDB2B /* AutoCompleteTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AutoCompleteTextField.modulemap; sourceTree = "<group>"; };
 		FFF5F2C933C9A6D6646EA57D9CDE409B /* Pods-AutoCompleteTextField_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AutoCompleteTextField_Example-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,6 +243,7 @@
 		E21E2F5FEE66F73CEEF0E8461FAEC050 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				F585134D1D426578000DB7BF /* Assets */,
 				4204BEB2C10D0ABA425AE44E81271C41 /* Classes */,
 			);
 			path = Pod;
@@ -252,6 +255,14 @@
 				6B49B9BE400EA485BD9B57A3A130147A /* AutoCompleteTextField */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		F585134D1D426578000DB7BF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F585134E1D42658A000DB7BF /* Images.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4862A522D4EFA37E1AA0D1B69157C336 /* AutoCompleteTextField.bundle in Resources */,
+				F585134F1D42658A000DB7BF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

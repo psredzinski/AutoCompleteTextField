@@ -313,7 +313,7 @@ public class AutoCompleteTextField: UITextField {
     }
     
     /// Show completion button with custom image
-    public func showAutoCompleteButton(buttonImage: UIImage? = UIImage(named: "check_icon"), autoCompleteButtonViewMode: AutoCompleteButtonViewMode) {
+    public func showAutoCompleteButton(buttonImage: UIImage? = UIImage(named: "checked", inBundle: NSBundle(forClass: AutoCompleteTextField.self), compatibleWithTraitCollection: nil), autoCompleteButtonViewMode: AutoCompleteButtonViewMode) {
         
         var buttonFrameH: CGFloat = 0.0
         var buttonOriginY: CGFloat = 0.0
