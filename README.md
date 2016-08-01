@@ -62,7 +62,7 @@ myTextField.showAutoCompleteButton(autoCompleteButtonViewMode: .WhileEditing)
 // Then provide your data source to get the suggestion from inputs
 func autoCompleteTextFieldDataSource(autoCompleteTextField: AutoCompleteTextField) -> [String] {
         
-    return ["gmail.com", "hotmail.com", "domain.net"]
+    return AutoCompleteTextField.domainNames // ["gmail.com", "hotmail.com", "domain.net"]
 }
 
 // Initializing with datasource
