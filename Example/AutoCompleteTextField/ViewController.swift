@@ -61,7 +61,7 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
     
     func autoCompleteTextFieldDataSource(autoCompleteTextField: AutoCompleteTextField) -> [String] {
         
-        return domainNames
+        return AutoCompleteTextField.domainNames // domainNames
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
