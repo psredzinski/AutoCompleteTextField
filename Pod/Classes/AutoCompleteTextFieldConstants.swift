@@ -15,13 +15,8 @@ import UIKit
 internal let defaultAutoCompleteButtonWidth: CGFloat = 30.0
 internal let defaultAutoCompleteButtonHeight: CGFloat = 30.0
 
-
-// MARK: - Public
-
-public typealias AutoCompleteButtonViewMode = UITextFieldViewMode
-
 /// Supported domain names
-public let SupportedDomainNames: [String] = {
+internal let SupportedDomainNames: [String] = {
     ["gmail.com",
      "yahoo.com",
      "hotmail.com",
@@ -180,3 +175,6 @@ public let SupportedDomainNames: [String] = {
      "cinci.rr.com"]
 }()
 
+// MARK: - Public
+
+public typealias AutoCompleteButtonViewMode = UITextFieldViewMode

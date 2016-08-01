@@ -69,6 +69,11 @@ public class AutoCompleteTextField: UITextField {
     /// Randomize suggestion flag. Default to ``false, will always use first found suggestion
     var isRandomSuggestion: Bool = false
     
+    /// Supported domain names
+    static public let domainNames: [String] = {
+        return SupportedDomainNames
+    }()
+    
     /// Text font settings
     override public var font: UIFont? {
         didSet { autoCompleteLbl.font = font }
