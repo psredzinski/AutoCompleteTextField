@@ -61,13 +61,13 @@ public class AutoCompleteTextField: UITextField {
     }
     
     /// Auto completion flag
-    var autoCompleteDisabled: Bool = false
+    public var autoCompleteDisabled: Bool = false
     
     /// Case search
-    var ignoreCase: Bool = true
+    public var ignoreCase: Bool = true
     
     /// Randomize suggestion flag. Default to ``false, will always use first found suggestion
-    var isRandomSuggestion: Bool = false
+    public var isRandomSuggestion: Bool = false
     
     /// Supported domain names
     static public let domainNames: [String] = {
