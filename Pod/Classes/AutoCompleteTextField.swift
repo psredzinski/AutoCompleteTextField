@@ -215,7 +215,7 @@ public class AutoCompleteTextField: UITextField {
     }
     
     private func performStringReplacement(suggestedString: String, stringFilter: String) -> String {
-        guard let filterRange = suggestedString.rangeOfString(stringFilter) else { return "" }
+        guard let filterRange = ignoreCase ? suggestedString.lowercaseString.rangeOfString(stringFilter) : suggestedString.rangeOfString(stringFilter) else { return "" }
         
         let finalString = suggestedString.stringByReplacingCharactersInRange(filterRange, withString: "")
         return finalString
