@@ -198,7 +198,7 @@ public class AutoCompleteTextField: UITextField {
         if suggestedStrings.isEmpty {
             return ""
         }
-        
+
         if isRandomSuggestion {
             let maxSuggestionCount = suggestedStrings.count
             let randomIdx = arc4random_uniform(UInt32(maxSuggestionCount))
@@ -206,7 +206,10 @@ public class AutoCompleteTextField: UITextField {
             
             return performStringReplacement(suggestedString, stringFilter: stringFilter)
         }else{
-            let suggestedString = suggestedStrings.first ?? ""
+
+            let suggestedString = suggestedStrings.sort({ (elementOne, elementTwo) -> Bool in
+                return elementOne.characters.count < elementTwo.characters.count
+            }).first ?? ""
             return performStringReplacement(suggestedString, stringFilter: stringFilter)
         }
     }
