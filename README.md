@@ -3,6 +3,7 @@
 [![CI Status](https://img.shields.io/badge/build-passed-brightgreen.svg)](https://img.shields.io/badge/build-passed-brightgreen.svg)
 [![Version](https://img.shields.io/badge/pod-v0.1.5-blue.svg)](https://img.shields.io/badge/pod-v0.1.5-blue.svg)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://img.shields.io/badge/Lisence-MIT-yellow.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 
 ![ezgif com-resize 1](https://cloud.githubusercontent.com/assets/6511079/16903266/0f2c58e2-4c50-11e6-827c-57b47992c9b2.gif)
