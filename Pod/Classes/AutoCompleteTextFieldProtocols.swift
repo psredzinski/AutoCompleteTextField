@@ -16,7 +16,7 @@ public protocol AutoCompleteTextFieldDataSource: NSObjectProtocol {
     
     // Required protocols
     
-    func autoCompleteTextFieldDataSource(autoCompleteTextField: AutoCompleteTextField) -> [String] // called when in need of suggestions.
+    func autoCompleteTextFieldDataSource(_ autoCompleteTextField: AutoCompleteTextField) -> [String] // called when in need of suggestions.
 }
 
 @objc public protocol AutoCompleteTextFieldDelegate: UITextFieldDelegate {
@@ -24,25 +24,25 @@ public protocol AutoCompleteTextFieldDataSource: NSObjectProtocol {
     // Optional protocols
     
     // return NO to disallow editing. Defaults to YES.
-    optional func textFieldShouldBeginEditing(textField: UITextField) -> Bool
+    @objc optional func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
     
     // became first responder
-    optional func textFieldDidBeginEditing(textField: UITextField)
+    @objc optional func textFieldDidBeginEditing(_ textField: UITextField)
     
     // return YES to allow editing to stop and to resign first responder status. NO to disallow the editing session to end. Defaults to YES.
-    optional func textFieldShouldEndEditing(textField: UITextField) -> Bool
+    @objc optional func textFieldShouldEndEditing(_ textField: UITextField) -> Bool
     
     // may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
-    optional func textFieldDidEndEditing(textField: UITextField)
+    @objc optional func textFieldDidEndEditing(_ textField: UITextField)
     
     // return NO to not change text. Defaults to YES.
-    optional func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool
+    @objc optional func textField(_ textField: UITextField, changeCharactersInRange range: NSRange, replacementString string: String) -> Bool
     
     // called when clear button pressed. return NO to ignore (no notifications)
-    optional func textFieldShouldClear(textField: UITextField) -> Bool
+    @objc optional func textFieldShouldClear(_ textField: UITextField) -> Bool
     
     // called when 'return' key pressed. return NO to ignore.
-    optional func textFieldShouldReturn(textField: UITextField) -> Bool
+    @objc optional func textFieldShouldReturn(_ textField: UITextField) -> Bool
     
 }
 
@@ -52,44 +52,45 @@ extension AutoCompleteTextField: UITextFieldDelegate {
     
     // MARK: - UITextFieldDelegate
     
-    public func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        guard let delegate = autoCompleteTextFieldDelegate, delegateCall = delegate.textFieldShouldBeginEditing else { return true }
+    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        guard let delegate = autoCompleteTextFieldDelegate, let delegateCall = delegate.textFieldShouldBeginEditing else { return true }
         
         return delegateCall(self)
     }
     
-    public func textFieldDidBeginEditing(textField: UITextField) {
-        guard let delegate = autoCompleteTextFieldDelegate, delegateCall = delegate.textFieldDidBeginEditing else { return }
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
+        guard let delegate = autoCompleteTextFieldDelegate, let delegateCall = delegate.textFieldDidBeginEditing else { return }
         
         delegateCall(self)
     }
     
-    public func textFieldShouldEndEditing(textField: UITextField) -> Bool {
-        guard let delegate = autoCompleteTextFieldDelegate, delegateCall = delegate.textFieldShouldEndEditing else { return true }
+    public func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        guard let delegate = autoCompleteTextFieldDelegate, let delegateCall = delegate.textFieldShouldEndEditing else { return true }
         
         return delegateCall(self)
     }
     
-    public func textFieldDidEndEditing(textField: UITextField) {
-        guard let delegate = autoCompleteTextFieldDelegate, delegateCall = delegate.textFieldDidEndEditing else { return }
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let delegate = autoCompleteTextFieldDelegate, let delegateCall = delegate.textFieldDidEndEditing else { return }
         
         delegateCall(self)
     }
     
-    public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        guard let delegate = autoCompleteTextFieldDelegate, delegateCall = delegate.textField(_:shouldChangeCharactersInRange:replacementString:) else { return true }
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        return delegateCall(textField, shouldChangeCharactersInRange: range, replacementString: string)
+        guard let delegate = autoCompleteTextFieldDelegate, let delegateCall = delegate.textField(_:changeCharactersInRange:replacementString:) else { return true }
+        
+        return delegateCall(textField, range, string)
     }
     
-    public func textFieldShouldClear(textField: UITextField) -> Bool {
-        guard let delegate = autoCompleteTextFieldDelegate, delegateCall = delegate.textFieldShouldClear else { return true }
+    public func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        guard let delegate = autoCompleteTextFieldDelegate, let delegateCall = delegate.textFieldShouldClear else { return true }
         
         return delegateCall(self)
     }
     
-    public func textFieldShouldReturn(textField: UITextField) -> Bool {
-        guard let delegate = autoCompleteTextFieldDelegate, delegateCall = delegate.textFieldShouldReturn else { return endEditing(true) }
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let delegate = autoCompleteTextFieldDelegate, let delegateCall = delegate.textFieldShouldReturn else { return endEditing(true) }
         
         return delegateCall(self)
     }

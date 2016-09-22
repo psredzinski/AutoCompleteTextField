@@ -43,8 +43,8 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
         txtReEmail.autoCompleteTextFieldDelegate = self
 
         // Show right side complete button
-        txtEmail.showAutoCompleteButton(autoCompleteButtonViewMode: .WhileEditing)
-        txtReEmail.showAutoCompleteButton(autoCompleteButtonViewMode: .WhileEditing)
+        txtEmail.showAutoCompleteButton(autoCompleteButtonViewMode: .whileEditing)
+        txtReEmail.showAutoCompleteButton(autoCompleteButtonViewMode: .whileEditing)
 
         // Initializing with datasource and delegate
 //        let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), autoCompleteTextFieldDataSource: self)
@@ -59,29 +59,28 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
     
     // MARK: - AutoCompleteTextFieldDataSource
     
-    func autoCompleteTextFieldDataSource(autoCompleteTextField: AutoCompleteTextField) -> [String] {
+    func autoCompleteTextFieldDataSource(_ autoCompleteTextField: AutoCompleteTextField) -> [String] {
         
         return AutoCompleteTextField.domainNames // domainNames
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField == txtEmail {
-            txtReEmail.becomeFirstResponder()
+            return txtReEmail.becomeFirstResponder()
         } else if textField == txtReEmail {
-            txtPassword.becomeFirstResponder()
+            return txtPassword.becomeFirstResponder()
         } else {
-            txtPassword.resignFirstResponder()
+            return txtPassword.resignFirstResponder()
         }
-        
-        return true
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, changeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
         print("tf: \(textField.text!) \(string)")
         
         return true
     }
+    
 }
 
