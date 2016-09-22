@@ -1,6 +1,6 @@
 {
   "name": "AutoCompleteTextField",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "summary": "TextField Subclass with auto completion feature.",
   "description": "\"A TextField Subclass that has input suggestion for user's convenience where auto completion feature kicks in where the suggestions are from filtered data from the provided source of the user.\"",
   "homepage": "https://github.com/nferocious76/AutoCompleteTextField",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/nferocious76/AutoCompleteTextField.git",
-    "tag": "0.2.1"
+    "tag": "0.2.3"
   },
   "platforms": {
     "ios": "8.0"
