@@ -243,7 +243,7 @@
 		E21E2F5FEE66F73CEEF0E8461FAEC050 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				F52D7A221D9387DC0066F35C /* Images.xcassets */,
+				F52B7FD71D938B5A00638394 /* Assets */,
 				4204BEB2C10D0ABA425AE44E81271C41 /* Classes */,
 			);
 			path = Pod;
@@ -255,6 +255,14 @@
 				6B49B9BE400EA485BD9B57A3A130147A /* AutoCompleteTextField */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		F52B7FD71D938B5A00638394 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F52D7A221D9387DC0066F35C /* Images.xcassets */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
