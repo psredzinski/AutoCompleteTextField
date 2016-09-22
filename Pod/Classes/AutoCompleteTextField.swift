@@ -335,7 +335,7 @@ open class AutoCompleteTextField: UITextField {
         }
         
         let autoCompleteButton = UIButton(frame: CGRect(x: 0, y: buttonOriginY, width: defaultAutoCompleteButtonWidth, height: buttonFrameH))
-        autoCompleteButton.setImage(buttonImage, for: UIControlState())
+        autoCompleteButton.setImage(buttonImage, for: .normal)
         autoCompleteButton.addTarget(self, action: #selector(AutoCompleteTextField.autoCompleteButtonDidTapped(_:)), for: .touchUpInside)
         
         let containerFrame = CGRect(x: 0, y: 0, width: defaultAutoCompleteButtonWidth, height: frame.height)
