@@ -7,41 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2783120750185150EE0631785195B114 /* AutoCompleteTextFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23864A8ED4F7D874C77C822E7F77FC13 /* AutoCompleteTextFieldProtocols.swift */; };
-		2F49F460C24D3BE03EB4AF197F5D025D /* AutoCompleteTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D115EF15225391F934033B77A51209C /* AutoCompleteTextField-dummy.m */; };
-		3FC39C8844717114F7CD631F244D3D7E /* Pods-AutoCompleteTextField_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DFDC173B0C08A1BBAC8EF00F7EFD322 /* Pods-AutoCompleteTextField_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4063A0FD8A39E0E2DA944E429B2F8C36 /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A56DB852CC7E3B9DCC2EEFBF2FE48BE /* AutoCompleteTextField.swift */; };
-		47F1905EB8B4ED918A07269595ACFC50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		4862A522D4EFA37E1AA0D1B69157C336 /* AutoCompleteTextField.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F48DAD2F8827FCF75B8074182A7DDFDA /* AutoCompleteTextField.bundle */; };
-		4F6707F141B75C16F4E30082FCAFA0B1 /* Pods-AutoCompleteTextField_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF5F2C933C9A6D6646EA57D9CDE409B /* Pods-AutoCompleteTextField_Example-dummy.m */; };
-		876BC90B8CCBA32F997FC180B8050626 /* AutoCompleteTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D00903B79E9F7245161013DC7E4C9D8 /* AutoCompleteTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		915ED99DE6BE4C3060D6682C61704F26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		BF2D17D1992355FA639BE742DC14E5D7 /* Pods-AutoCompleteTextField_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0E49A45E9B63E9A4C1C71535825448 /* Pods-AutoCompleteTextField_Tests-dummy.m */; };
-		D2020BB912821FB5A8434A129B2FE746 /* Pods-AutoCompleteTextField_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B4A6F22E003B632A8857FFE283B81DE /* Pods-AutoCompleteTextField_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D90FEA0274BB7E6A178342124A1247BF /* AutoCompleteTextFieldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF52A5E009F2CC4BC6EAFCE6D41A006 /* AutoCompleteTextFieldConstants.swift */; };
-		DA58BDE2DD9BA2332F058AF9693D33E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		04312855EE1C0FD9EA0232AEA614CC02 /* AutoCompleteTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D00903B79E9F7245161013DC7E4C9D8 /* AutoCompleteTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		067439ABD7BF00A470C193B3F89FB7BC /* Pods-AutoCompleteTextField_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF5F2C933C9A6D6646EA57D9CDE409B /* Pods-AutoCompleteTextField_Example-dummy.m */; };
+		07771CDF146D1F0980FCB308893B602B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		25FD197D96DE907A931CC8AEC95961C0 /* AutoCompleteTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D115EF15225391F934033B77A51209C /* AutoCompleteTextField-dummy.m */; };
+		2D986C9A0D48BCED815BC6088128F644 /* Pods-AutoCompleteTextField_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0E49A45E9B63E9A4C1C71535825448 /* Pods-AutoCompleteTextField_Tests-dummy.m */; };
+		50E9E185C92D9E5B8D5B13C6661223FA /* AutoCompleteTextFieldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF52A5E009F2CC4BC6EAFCE6D41A006 /* AutoCompleteTextFieldConstants.swift */; };
+		564A848BF2B81F52D532B5B5FA519A5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		5DB495CD6492B9A0C05CD7D661755260 /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A56DB852CC7E3B9DCC2EEFBF2FE48BE /* AutoCompleteTextField.swift */; };
+		6BAD920AE63C455697EB5C0C3F341302 /* AutoCompleteTextField.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F48DAD2F8827FCF75B8074182A7DDFDA /* AutoCompleteTextField.bundle */; };
+		DE2DCAD58BB0A60531DF11E952CD9CAC /* Pods-AutoCompleteTextField_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DFDC173B0C08A1BBAC8EF00F7EFD322 /* Pods-AutoCompleteTextField_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9A42B21CF0A3A4400AC9AAF159E6A10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		ECC7474ECCD081AF66E585669CF41468 /* AutoCompleteTextFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23864A8ED4F7D874C77C822E7F77FC13 /* AutoCompleteTextFieldProtocols.swift */; };
+		F39BBD35B2AEA6AC0F66E77BA934C2BB /* Pods-AutoCompleteTextField_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B4A6F22E003B632A8857FFE283B81DE /* Pods-AutoCompleteTextField_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		48C115BA87E3A9997514013E8E14D2F9 /* PBXContainerItemProxy */ = {
+		5DF5E31F031ED80E1F94D5BE31AE5501 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0A388BF341F45CB8E1E913D4B54F5288;
+			remoteGlobalIDString = 8B79FD3B1C6C0887C0363F7571C0D96B;
 			remoteInfo = "AutoCompleteTextField-AutoCompleteTextField";
 		};
-		6F60D4A5B29B6A43521080315E905D86 /* PBXContainerItemProxy */ = {
+		637AF0C5A8FDAC6A4DB271616CFBFA46 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 96E493C35721CD73AD5A810600C5F25B;
+			remoteGlobalIDString = FF19059CD41A85AD90EDBE1DCB271223;
 			remoteInfo = AutoCompleteTextField;
 		};
-		B40F1762D2BFE1BFAEE36FF3F84A49B6 /* PBXContainerItemProxy */ = {
+		734AF84D2806948F5C494C75688D5129 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 96E493C35721CD73AD5A810600C5F25B;
+			remoteGlobalIDString = FF19059CD41A85AD90EDBE1DCB271223;
 			remoteInfo = AutoCompleteTextField;
 		};
 /* End PBXContainerItemProxy section */
@@ -61,59 +61,59 @@
 		4D115EF15225391F934033B77A51209C /* AutoCompleteTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AutoCompleteTextField-dummy.m"; sourceTree = "<group>"; };
 		4DF52A5E009F2CC4BC6EAFCE6D41A006 /* AutoCompleteTextFieldConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextFieldConstants.swift; sourceTree = "<group>"; };
 		6B4A6F22E003B632A8857FFE283B81DE /* Pods-AutoCompleteTextField_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AutoCompleteTextField_Tests-umbrella.h"; sourceTree = "<group>"; };
-		6C372B969ED6B08A3987992241280146 /* Pods-AutoCompleteTextField_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-AutoCompleteTextField_Tests.modulemap"; sourceTree = "<group>"; };
+		6C372B969ED6B08A3987992241280146 /* Pods-AutoCompleteTextField_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-AutoCompleteTextField_Tests.modulemap"; sourceTree = "<group>"; };
 		7007AB6F7A32B2F2B2F25E6BDECB1E28 /* Pods-AutoCompleteTextField_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AutoCompleteTextField_Example.release.xcconfig"; sourceTree = "<group>"; };
-		70CAE9697BD092F968141D05FC451E24 /* AutoCompleteTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoCompleteTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70CAE9697BD092F968141D05FC451E24 /* AutoCompleteTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AutoCompleteTextField.framework; path = AutoCompleteTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A09C0DB935F6923B5420F2A789D5C40 /* Pods-AutoCompleteTextField_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AutoCompleteTextField_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		811A434B8CC65D14155BE78772519EFF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A56DB852CC7E3B9DCC2EEFBF2FE48BE /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
 		8CDA97A7E8629776CA37B485E274006A /* Pods-AutoCompleteTextField_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AutoCompleteTextField_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D00903B79E9F7245161013DC7E4C9D8 /* AutoCompleteTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AutoCompleteTextField-umbrella.h"; sourceTree = "<group>"; };
 		920F212B2E2DE4C671A3DF0DA0DCB94B /* ResourceBundle-AutoCompleteTextField-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-AutoCompleteTextField-Info.plist"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9791382250F0E0AB7E6605DEEF84A287 /* AutoCompleteTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AutoCompleteTextField.xcconfig; sourceTree = "<group>"; };
-		ACDF8DF13E6044A7AC1F755387101BFA /* Pods_AutoCompleteTextField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoCompleteTextField_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B09B0EE1080047A1789B0FF14DF4928F /* Pods_AutoCompleteTextField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoCompleteTextField_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACDF8DF13E6044A7AC1F755387101BFA /* Pods_AutoCompleteTextField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AutoCompleteTextField_Example.framework; path = "Pods-AutoCompleteTextField_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B09B0EE1080047A1789B0FF14DF4928F /* Pods_AutoCompleteTextField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AutoCompleteTextField_Tests.framework; path = "Pods-AutoCompleteTextField_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BABB0470884BE883451C5A1EF6BDD409 /* Pods-AutoCompleteTextField_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AutoCompleteTextField_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		C71C40417894D538F874BEA6D6819E5D /* AutoCompleteTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AutoCompleteTextField-prefix.pch"; sourceTree = "<group>"; };
-		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D178FA662E49D385FFBD01EC304BA739 /* Pods-AutoCompleteTextField_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AutoCompleteTextField_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		D2DD9E1A4194D55F6E35573DE52FC6EA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFAEE65F88EB1384E74ABCD2A6707AC0 /* Pods-AutoCompleteTextField_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-AutoCompleteTextField_Example.modulemap"; sourceTree = "<group>"; };
-		F48DAD2F8827FCF75B8074182A7DDFDA /* AutoCompleteTextField.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoCompleteTextField.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6912EBE5679FF365B06077EB44DDB2B /* AutoCompleteTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AutoCompleteTextField.modulemap; sourceTree = "<group>"; };
+		DFAEE65F88EB1384E74ABCD2A6707AC0 /* Pods-AutoCompleteTextField_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-AutoCompleteTextField_Example.modulemap"; sourceTree = "<group>"; };
+		F48DAD2F8827FCF75B8074182A7DDFDA /* AutoCompleteTextField.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AutoCompleteTextField.bundle; path = AutoCompleteTextField.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6912EBE5679FF365B06077EB44DDB2B /* AutoCompleteTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AutoCompleteTextField.modulemap; sourceTree = "<group>"; };
 		FFF5F2C933C9A6D6646EA57D9CDE409B /* Pods-AutoCompleteTextField_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AutoCompleteTextField_Example-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		51552337EE2D9C50AF43106313AB6AAB /* Frameworks */ = {
+		2EB843D2EEBB00C8D4B5F34F5FC0BB50 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				915ED99DE6BE4C3060D6682C61704F26 /* Foundation.framework in Frameworks */,
+				564A848BF2B81F52D532B5B5FA519A5C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5DD5EA1FCB21A72A978E732427187B62 /* Frameworks */ = {
+		695D7C577B4A00E8A8BB7A497FD2E667 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07771CDF146D1F0980FCB308893B602B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BBD5DE058A4D4E109DCCB113E1B7342 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		796787B3DCC868CC36918AD11938CF45 /* Frameworks */ = {
+		F3A9DFB165CD6B9617C8F31016521A5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA58BDE2DD9BA2332F058AF9693D33E2 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C806B7853F2EE04CA3523491D6E3CC45 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				47F1905EB8B4ED918A07269595ACFC50 /* Foundation.framework in Frameworks */,
+				E9A42B21CF0A3A4400AC9AAF159E6A10 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,14 +129,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 		4204BEB2C10D0ABA425AE44E81271C41 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +136,7 @@
 				4DF52A5E009F2CC4BC6EAFCE6D41A006 /* AutoCompleteTextFieldConstants.swift */,
 				23864A8ED4F7D874C77C822E7F77FC13 /* AutoCompleteTextFieldProtocols.swift */,
 			);
+			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -190,6 +183,14 @@
 			path = "Example/Pods/Target Support Files/AutoCompleteTextField";
 			sourceTree = "<group>";
 		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -233,7 +234,7 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -243,6 +244,7 @@
 			children = (
 				4204BEB2C10D0ABA425AE44E81271C41 /* Classes */,
 			);
+			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -257,40 +259,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3A7CF236D1F7DB281575CFD73587575A /* Headers */ = {
+		1CD8E5C3D20FCF59EAFE0C48B0A408C9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FC39C8844717114F7CD631F244D3D7E /* Pods-AutoCompleteTextField_Example-umbrella.h in Headers */,
+				04312855EE1C0FD9EA0232AEA614CC02 /* AutoCompleteTextField-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		54F6991C57AF7A4A4494DC1B549483D1 /* Headers */ = {
+		31F8D20A7EAD41F8D10DAEB8E2C9F1D5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				876BC90B8CCBA32F997FC180B8050626 /* AutoCompleteTextField-umbrella.h in Headers */,
+				F39BBD35B2AEA6AC0F66E77BA934C2BB /* Pods-AutoCompleteTextField_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		920B0730EFB45BFB6B9E565050B0EDBD /* Headers */ = {
+		5E8F91D45FA0310B93FB2AF89DC69095 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2020BB912821FB5A8434A129B2FE746 /* Pods-AutoCompleteTextField_Tests-umbrella.h in Headers */,
+				DE2DCAD58BB0A60531DF11E952CD9CAC /* Pods-AutoCompleteTextField_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0A388BF341F45CB8E1E913D4B54F5288 /* AutoCompleteTextField-AutoCompleteTextField */ = {
+		8B79FD3B1C6C0887C0363F7571C0D96B /* AutoCompleteTextField-AutoCompleteTextField */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C67ED87A00D02BB83D960E1A7F2EB13A /* Build configuration list for PBXNativeTarget "AutoCompleteTextField-AutoCompleteTextField" */;
+			buildConfigurationList = 4738CFAA203C394BAE7B628DCE4C1FC7 /* Build configuration list for PBXNativeTarget "AutoCompleteTextField-AutoCompleteTextField" */;
 			buildPhases = (
-				C295180E8AEA7239C2836E16794B9BCD /* Sources */,
-				5DD5EA1FCB21A72A978E732427187B62 /* Frameworks */,
-				6F6CA3B14CC72246BE22451AE9998D64 /* Resources */,
+				7DCF577A6CF4441B8462F65517636386 /* Sources */,
+				8BBD5DE058A4D4E109DCCB113E1B7342 /* Frameworks */,
+				885F484DE9AEC9437A1968DAEFC04790 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -301,59 +303,59 @@
 			productReference = F48DAD2F8827FCF75B8074182A7DDFDA /* AutoCompleteTextField.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		266FC07EBFB239064D6AF81625975021 /* Pods-AutoCompleteTextField_Tests */ = {
+		D7B6BE0E678D5AC3066AA1286B94CAEC /* Pods-AutoCompleteTextField_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4F9D4B0B879AD4BA3EEEDD8E8C03F589 /* Build configuration list for PBXNativeTarget "Pods-AutoCompleteTextField_Tests" */;
+			buildConfigurationList = 9CF1122D5194B0F655332A057FCA710F /* Build configuration list for PBXNativeTarget "Pods-AutoCompleteTextField_Tests" */;
 			buildPhases = (
-				AA71846BA9D920B37D65814C7F3EE2C1 /* Sources */,
-				796787B3DCC868CC36918AD11938CF45 /* Frameworks */,
-				920B0730EFB45BFB6B9E565050B0EDBD /* Headers */,
+				092BB66F04D703C635ED25F09D5B3888 /* Sources */,
+				F3A9DFB165CD6B9617C8F31016521A5E /* Frameworks */,
+				31F8D20A7EAD41F8D10DAEB8E2C9F1D5 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				51B788E1DE8DC1FBE16185AA1AB65D90 /* PBXTargetDependency */,
+				CEB748D7C5E6FBE70D396226128AB7B0 /* PBXTargetDependency */,
 			);
 			name = "Pods-AutoCompleteTextField_Tests";
 			productName = "Pods-AutoCompleteTextField_Tests";
 			productReference = B09B0EE1080047A1789B0FF14DF4928F /* Pods_AutoCompleteTextField_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		96E493C35721CD73AD5A810600C5F25B /* AutoCompleteTextField */ = {
+		F3A74ABC4B736254C68834429D2E5F24 /* Pods-AutoCompleteTextField_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BFEEEDB01C52B489BA6F2ADA3A82E425 /* Build configuration list for PBXNativeTarget "AutoCompleteTextField" */;
+			buildConfigurationList = 7E7FCE1BCC669C9A0E1F5D91CBEF5ED0 /* Build configuration list for PBXNativeTarget "Pods-AutoCompleteTextField_Example" */;
 			buildPhases = (
-				5591810671BDAFA8C5756A7B5464F4D3 /* Sources */,
-				51552337EE2D9C50AF43106313AB6AAB /* Frameworks */,
-				B567EDD555435819B9A69A69C671F217 /* Resources */,
-				54F6991C57AF7A4A4494DC1B549483D1 /* Headers */,
+				2B24A8FC9FF7EFC35B01CC1CA89E7F27 /* Sources */,
+				2EB843D2EEBB00C8D4B5F34F5FC0BB50 /* Frameworks */,
+				5E8F91D45FA0310B93FB2AF89DC69095 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2BB6B2FD1CDF1DEFED6682B4030C03B0 /* PBXTargetDependency */,
-			);
-			name = AutoCompleteTextField;
-			productName = AutoCompleteTextField;
-			productReference = 70CAE9697BD092F968141D05FC451E24 /* AutoCompleteTextField.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		BC074B55972B05B404334A35E6D03715 /* Pods-AutoCompleteTextField_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7248AB151D144493A0E84C9DC862572E /* Build configuration list for PBXNativeTarget "Pods-AutoCompleteTextField_Example" */;
-			buildPhases = (
-				F65D07A0DB115FED5D17057E6A010E8A /* Sources */,
-				C806B7853F2EE04CA3523491D6E3CC45 /* Frameworks */,
-				3A7CF236D1F7DB281575CFD73587575A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D3C94759A80DB52BD6ADC3A7D6E0091D /* PBXTargetDependency */,
+				5948036D47F206412ED02481F64DCD5F /* PBXTargetDependency */,
 			);
 			name = "Pods-AutoCompleteTextField_Example";
 			productName = "Pods-AutoCompleteTextField_Example";
 			productReference = ACDF8DF13E6044A7AC1F755387101BFA /* Pods_AutoCompleteTextField_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FF19059CD41A85AD90EDBE1DCB271223 /* AutoCompleteTextField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDF6D9E60758603EB9D1103A41600FC2 /* Build configuration list for PBXNativeTarget "AutoCompleteTextField" */;
+			buildPhases = (
+				1BECAC81CB2FD86848FC431500B0B334 /* Sources */,
+				695D7C577B4A00E8A8BB7A497FD2E667 /* Frameworks */,
+				13062CA173D3C5067ACB6C90E6F2E1E1 /* Resources */,
+				1CD8E5C3D20FCF59EAFE0C48B0A408C9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8234FEEC95AFDC0DE4AF7A9354527F39 /* PBXTargetDependency */,
+			);
+			name = AutoCompleteTextField;
+			productName = AutoCompleteTextField;
+			productReference = 70CAE9697BD092F968141D05FC451E24 /* AutoCompleteTextField.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -377,92 +379,163 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				96E493C35721CD73AD5A810600C5F25B /* AutoCompleteTextField */,
-				0A388BF341F45CB8E1E913D4B54F5288 /* AutoCompleteTextField-AutoCompleteTextField */,
-				BC074B55972B05B404334A35E6D03715 /* Pods-AutoCompleteTextField_Example */,
-				266FC07EBFB239064D6AF81625975021 /* Pods-AutoCompleteTextField_Tests */,
+				FF19059CD41A85AD90EDBE1DCB271223 /* AutoCompleteTextField */,
+				8B79FD3B1C6C0887C0363F7571C0D96B /* AutoCompleteTextField-AutoCompleteTextField */,
+				F3A74ABC4B736254C68834429D2E5F24 /* Pods-AutoCompleteTextField_Example */,
+				D7B6BE0E678D5AC3066AA1286B94CAEC /* Pods-AutoCompleteTextField_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6F6CA3B14CC72246BE22451AE9998D64 /* Resources */ = {
+		13062CA173D3C5067ACB6C90E6F2E1E1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BAD920AE63C455697EB5C0C3F341302 /* AutoCompleteTextField.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B567EDD555435819B9A69A69C671F217 /* Resources */ = {
+		885F484DE9AEC9437A1968DAEFC04790 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4862A522D4EFA37E1AA0D1B69157C336 /* AutoCompleteTextField.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5591810671BDAFA8C5756A7B5464F4D3 /* Sources */ = {
+		092BB66F04D703C635ED25F09D5B3888 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F49F460C24D3BE03EB4AF197F5D025D /* AutoCompleteTextField-dummy.m in Sources */,
-				4063A0FD8A39E0E2DA944E429B2F8C36 /* AutoCompleteTextField.swift in Sources */,
-				D90FEA0274BB7E6A178342124A1247BF /* AutoCompleteTextFieldConstants.swift in Sources */,
-				2783120750185150EE0631785195B114 /* AutoCompleteTextFieldProtocols.swift in Sources */,
+				2D986C9A0D48BCED815BC6088128F644 /* Pods-AutoCompleteTextField_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA71846BA9D920B37D65814C7F3EE2C1 /* Sources */ = {
+		1BECAC81CB2FD86848FC431500B0B334 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2D17D1992355FA639BE742DC14E5D7 /* Pods-AutoCompleteTextField_Tests-dummy.m in Sources */,
+				25FD197D96DE907A931CC8AEC95961C0 /* AutoCompleteTextField-dummy.m in Sources */,
+				5DB495CD6492B9A0C05CD7D661755260 /* AutoCompleteTextField.swift in Sources */,
+				50E9E185C92D9E5B8D5B13C6661223FA /* AutoCompleteTextFieldConstants.swift in Sources */,
+				ECC7474ECCD081AF66E585669CF41468 /* AutoCompleteTextFieldProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C295180E8AEA7239C2836E16794B9BCD /* Sources */ = {
+		2B24A8FC9FF7EFC35B01CC1CA89E7F27 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				067439ABD7BF00A470C193B3F89FB7BC /* Pods-AutoCompleteTextField_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F65D07A0DB115FED5D17057E6A010E8A /* Sources */ = {
+		7DCF577A6CF4441B8462F65517636386 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F6707F141B75C16F4E30082FCAFA0B1 /* Pods-AutoCompleteTextField_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2BB6B2FD1CDF1DEFED6682B4030C03B0 /* PBXTargetDependency */ = {
+		5948036D47F206412ED02481F64DCD5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AutoCompleteTextField;
+			target = FF19059CD41A85AD90EDBE1DCB271223 /* AutoCompleteTextField */;
+			targetProxy = 637AF0C5A8FDAC6A4DB271616CFBFA46 /* PBXContainerItemProxy */;
+		};
+		8234FEEC95AFDC0DE4AF7A9354527F39 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "AutoCompleteTextField-AutoCompleteTextField";
-			target = 0A388BF341F45CB8E1E913D4B54F5288 /* AutoCompleteTextField-AutoCompleteTextField */;
-			targetProxy = 48C115BA87E3A9997514013E8E14D2F9 /* PBXContainerItemProxy */;
+			target = 8B79FD3B1C6C0887C0363F7571C0D96B /* AutoCompleteTextField-AutoCompleteTextField */;
+			targetProxy = 5DF5E31F031ED80E1F94D5BE31AE5501 /* PBXContainerItemProxy */;
 		};
-		51B788E1DE8DC1FBE16185AA1AB65D90 /* PBXTargetDependency */ = {
+		CEB748D7C5E6FBE70D396226128AB7B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AutoCompleteTextField;
-			target = 96E493C35721CD73AD5A810600C5F25B /* AutoCompleteTextField */;
-			targetProxy = B40F1762D2BFE1BFAEE36FF3F84A49B6 /* PBXContainerItemProxy */;
-		};
-		D3C94759A80DB52BD6ADC3A7D6E0091D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AutoCompleteTextField;
-			target = 96E493C35721CD73AD5A810600C5F25B /* AutoCompleteTextField */;
-			targetProxy = 6F60D4A5B29B6A43521080315E905D86 /* PBXContainerItemProxy */;
+			target = FF19059CD41A85AD90EDBE1DCB271223 /* AutoCompleteTextField */;
+			targetProxy = 734AF84D2806948F5C494C75688D5129 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		06AA7012E6847CEEEA762AE527CBA048 /* Debug */ = {
+		1B89A0D06BCFD08B91AD1C935B8B0F6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A09C0DB935F6923B5420F2A789D5C40 /* Pods-AutoCompleteTextField_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AutoCompleteTextField_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AutoCompleteTextField_Tests/Pods-AutoCompleteTextField_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AutoCompleteTextField_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2C0C07979A67C9483E7F586A4821193C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CDA97A7E8629776CA37B485E274006A /* Pods-AutoCompleteTextField_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AutoCompleteTextField_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AutoCompleteTextField_Tests/Pods-AutoCompleteTextField_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AutoCompleteTextField_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		76020FE5429FAC30FA0F678F3E38AB0A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 166A0CB4B671EA6397342371CD8918C3 /* Pods-AutoCompleteTextField_Example.debug.xcconfig */;
 			buildSettings = {
@@ -498,57 +571,7 @@
 			};
 			name = Debug;
 		};
-		207F623348C173D9D5DE57FBE4B6C6C7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9791382250F0E0AB7E6605DEEF84A287 /* AutoCompleteTextField.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AutoCompleteTextField/AutoCompleteTextField-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AutoCompleteTextField/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AutoCompleteTextField/AutoCompleteTextField.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = AutoCompleteTextField;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		3C3DB750DF167F94E45BBAA09B6C11E2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9791382250F0E0AB7E6605DEEF84A287 /* AutoCompleteTextField.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AutoCompleteTextField";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/AutoCompleteTextField/ResourceBundle-AutoCompleteTextField-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = AutoCompleteTextField;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		55F4A64E9F0C19F27F75DAE1CE6290CF /* Release */ = {
+		86683588A10A71CDCE6583AF3EEA1BFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7007AB6F7A32B2F2B2F25E6BDECB1E28 /* Pods-AutoCompleteTextField_Example.release.xcconfig */;
 			buildSettings = {
@@ -623,23 +646,6 @@
 			};
 			name = Release;
 		};
-		8FD77C36CD5B7683754CFA04E2AE9085 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9791382250F0E0AB7E6605DEEF84A287 /* AutoCompleteTextField.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AutoCompleteTextField";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/AutoCompleteTextField/ResourceBundle-AutoCompleteTextField-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = AutoCompleteTextField;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -684,78 +690,7 @@
 			};
 			name = Debug;
 		};
-		AAE811221677FB5508AE8B96C5C7B791 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CDA97A7E8629776CA37B485E274006A /* Pods-AutoCompleteTextField_Tests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-AutoCompleteTextField_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AutoCompleteTextField_Tests/Pods-AutoCompleteTextField_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_AutoCompleteTextField_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		EEBA7FA9A96C785E18481B1C2F7E8804 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A09C0DB935F6923B5420F2A789D5C40 /* Pods-AutoCompleteTextField_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-AutoCompleteTextField_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AutoCompleteTextField_Tests/Pods-AutoCompleteTextField_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_AutoCompleteTextField_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		FCBB53A4EE9361BA71E3D6DFFD08945B /* Release */ = {
+		AA77BB0013C90A46A481261119AF2C29 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9791382250F0E0AB7E6605DEEF84A287 /* AutoCompleteTextField.xcconfig */;
 			buildSettings = {
@@ -787,6 +722,73 @@
 			};
 			name = Release;
 		};
+		BCFCB525AE897DE1307A321178D8D052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9791382250F0E0AB7E6605DEEF84A287 /* AutoCompleteTextField.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AutoCompleteTextField";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/AutoCompleteTextField/ResourceBundle-AutoCompleteTextField-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = AutoCompleteTextField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		CD34826BF728FA86C2BF72DA0F624ABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9791382250F0E0AB7E6605DEEF84A287 /* AutoCompleteTextField.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AutoCompleteTextField/AutoCompleteTextField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AutoCompleteTextField/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AutoCompleteTextField/AutoCompleteTextField.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AutoCompleteTextField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FF48ABB9E459588C86E0A33F12B3B26B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9791382250F0E0AB7E6605DEEF84A287 /* AutoCompleteTextField.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AutoCompleteTextField";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/AutoCompleteTextField/ResourceBundle-AutoCompleteTextField-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = AutoCompleteTextField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -799,38 +801,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4F9D4B0B879AD4BA3EEEDD8E8C03F589 /* Build configuration list for PBXNativeTarget "Pods-AutoCompleteTextField_Tests" */ = {
+		4738CFAA203C394BAE7B628DCE4C1FC7 /* Build configuration list for PBXNativeTarget "AutoCompleteTextField-AutoCompleteTextField" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AAE811221677FB5508AE8B96C5C7B791 /* Debug */,
-				EEBA7FA9A96C785E18481B1C2F7E8804 /* Release */,
+				FF48ABB9E459588C86E0A33F12B3B26B /* Debug */,
+				BCFCB525AE897DE1307A321178D8D052 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7248AB151D144493A0E84C9DC862572E /* Build configuration list for PBXNativeTarget "Pods-AutoCompleteTextField_Example" */ = {
+		7E7FCE1BCC669C9A0E1F5D91CBEF5ED0 /* Build configuration list for PBXNativeTarget "Pods-AutoCompleteTextField_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				06AA7012E6847CEEEA762AE527CBA048 /* Debug */,
-				55F4A64E9F0C19F27F75DAE1CE6290CF /* Release */,
+				76020FE5429FAC30FA0F678F3E38AB0A /* Debug */,
+				86683588A10A71CDCE6583AF3EEA1BFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BFEEEDB01C52B489BA6F2ADA3A82E425 /* Build configuration list for PBXNativeTarget "AutoCompleteTextField" */ = {
+		9CF1122D5194B0F655332A057FCA710F /* Build configuration list for PBXNativeTarget "Pods-AutoCompleteTextField_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				207F623348C173D9D5DE57FBE4B6C6C7 /* Debug */,
-				FCBB53A4EE9361BA71E3D6DFFD08945B /* Release */,
+				2C0C07979A67C9483E7F586A4821193C /* Debug */,
+				1B89A0D06BCFD08B91AD1C935B8B0F6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C67ED87A00D02BB83D960E1A7F2EB13A /* Build configuration list for PBXNativeTarget "AutoCompleteTextField-AutoCompleteTextField" */ = {
+		EDF6D9E60758603EB9D1103A41600FC2 /* Build configuration list for PBXNativeTarget "AutoCompleteTextField" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8FD77C36CD5B7683754CFA04E2AE9085 /* Debug */,
-				3C3DB750DF167F94E45BBAA09B6C11E2 /* Release */,
+				CD34826BF728FA86C2BF72DA0F624ABE /* Debug */,
+				AA77BB0013C90A46A481261119AF2C29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
