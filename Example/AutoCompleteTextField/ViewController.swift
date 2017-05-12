@@ -43,13 +43,13 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
         txtReEmail.autoCompleteTextFieldDelegate = self
 
         // Show right side complete button
-        txtEmail.showAutoCompleteButton(autoCompleteButtonViewMode: .whileEditing)
-        txtReEmail.showAutoCompleteButton(autoCompleteButtonViewMode: .whileEditing)
+        txtEmail.showAutoCompleteButtonWithImage(viewMode: .whileEditing)
+        txtReEmail.showAutoCompleteButtonWithImage(viewMode: .whileEditing)
 
         // Initializing with datasource and delegate
-//        let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), autoCompleteTextFieldDataSource: self)
-//        textFieldWithDelegateAndDataSource.backgroundColor = .redColor()
-//        view.addSubview(textFieldWithDelegateAndDataSource)
+        /*let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), autoCompleteTextFieldDataSource: self)
+        textFieldWithDelegateAndDataSource.backgroundColor = .red
+        view.addSubview(textFieldWithDelegateAndDataSource)*/
     }
     
     override func didReceiveMemoryWarning() {
