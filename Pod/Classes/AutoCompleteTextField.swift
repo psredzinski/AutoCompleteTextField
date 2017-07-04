@@ -296,6 +296,7 @@ open class AutoCompleteTextField: UITextField {
         
         autoCompleteLbl.text = ""
         text = originalInputString + autocompleteString
+        sendActions(for: .valueChanged)
     }
     
     // MARK: - Internal Controls
