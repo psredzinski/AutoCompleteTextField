@@ -75,7 +75,7 @@ let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 
 
 AutoCompleteTextFieldManualDataSource conforms to the AutoCompleteTextFieldDataSource so all the functionality is the same with the added ability to manually provide autocomplete suggestions.
 
-Use the AutoCompleteTextFieldManualDataSource when providing a suggestion that is found through custom sorting. Going off the original example of email domain suggestions. The default suggestions are chosen in alphabetical order, but for better user experience we may want to certain email domains to show up if they are more popular. 
+Use the AutoCompleteTextFieldManualDataSource when providing a suggestion that is found through custom sorting. Going off the original example of email domain suggestions, the default suggestions are chosen in alphabetical order from the provided array. However, for better user experience we may want certain email domains to show up first if they are more popular. 
 
 One example may be 'gmail.com' and 'georgetown.edu'. Users are more likely to have a 'gmail.com' account so we would want that to show up before 'georgetown.edu', even though that is out of alphabetical order. 
 
