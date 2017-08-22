@@ -28,28 +28,38 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
                        "ymail.com",
                        "icloud.com"]
     
+    // add weighted domain names
+    var weightedDomains: [WeightedDomain] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         // Optional setting for delegate if not setted in IB
-        txtEmail.autoCompleteTextFieldDataSource = self
+        //        txtEmail.autoCompleteTextFieldDataSource = self
+        txtEmail.autoCompleteTextFieldManualDataSource = self
         txtReEmail.autoCompleteTextFieldDataSource = self
-
+        
         txtEmail.setDelimiter("@")
         txtReEmail.setDelimiter("@")
-
+        
         txtEmail.autoCompleteTextFieldDelegate = self
         txtReEmail.autoCompleteTextFieldDelegate = self
-
+        
         // Show right side complete button
         txtEmail.showAutoCompleteButtonWithImage(viewMode: .whileEditing)
         txtReEmail.showAutoCompleteButtonWithImage(viewMode: .whileEditing)
-
+        
         // Initializing with datasource and delegate
         /*let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), autoCompleteTextFieldDataSource: self)
-        textFieldWithDelegateAndDataSource.backgroundColor = .red
-        view.addSubview(textFieldWithDelegateAndDataSource)*/
+         textFieldWithDelegateAndDataSource.backgroundColor = .red
+         view.addSubview(textFieldWithDelegateAndDataSource)*/
+        
+        let g1 = WeightedDomain(text: "gmail.com", weight: 10)
+        let g2 = WeightedDomain(text: "googlemail.com", weight: 5)
+        let g3 = WeightedDomain(text: "google.com", weight: 4)
+        let g4 = WeightedDomain(text: "georgetown.edu", weight: 1)
+        weightedDomains = [g1, g2, g3, g4]
     }
     
     override func didReceiveMemoryWarning() {
@@ -82,5 +92,20 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
         return true
     }
     
+}
+
+extension ViewController: AutoCompleteTextFieldManualDataSource {
+    
+    func autoCompleteTextField(_ autoCompleteTextField: AutoCompleteTextField, suggestionFor text: String) -> String? {
+        
+        let lowered = text.lowercased()
+        let filtered = weightedDomains.filter { (domain) -> Bool in
+            return domain.text.lowercased().contains(lowered)
+            }.sorted { (d1, d2) -> Bool in
+                return d1.weight > d2.weight && d1.text < d2.text
+        }
+        
+        return filtered.first?.text
+    }
 }
 
