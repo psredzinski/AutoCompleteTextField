@@ -15,10 +15,7 @@ open class AutoCompleteTextField: UITextField {
     /// AutoCompleteTextField data source
     open weak var autoCompleteTextFieldDataSource: AutoCompleteTextFieldDataSource?
     
-    /// Manual AutoCompleteTextFieldDataSource
-    open weak var autoCompleteTextFieldManualDataSource: AutoCompleteTextFieldManualDataSource?
-    
-    // AutoCompleteTextField data source accessible through IB
+    /// AutoCompleteTextField data source accessible through IB
     @IBOutlet weak internal var dataSource: AnyObject! {
         didSet {
             autoCompleteTextFieldDataSource = dataSource as? AutoCompleteTextFieldDataSource
@@ -28,7 +25,7 @@ open class AutoCompleteTextField: UITextField {
     /// AutoCompleteTextField delegate
     open weak var autoCompleteTextFieldDelegate: AutoCompleteTextFieldDelegate!
     
-    // AutoCompleteTextField delegate accessible through IB
+    /// AutoCompleteTextField delegate accessible through IB
     weak open override var delegate: UITextFieldDelegate? {
         set (x) { autoCompleteTextFieldDelegate = x as? AutoCompleteTextFieldDelegate }
         get { return autoCompleteTextFieldDelegate }
@@ -73,7 +70,7 @@ open class AutoCompleteTextField: UITextField {
     open var isRandomSuggestion: Bool = false
     
     /// Supported domain names
-    static open let domainNames: [String] = {
+    static open let domainNames: [ACTFWeightedDomain] = {
         return SupportedDomainNames
     }()
     
@@ -179,19 +176,11 @@ open class AutoCompleteTextField: UITextField {
     
     fileprivate func performStringSuggestionsSearch(_ queryString: String) -> String {
         
-        // handle nil data source
-        if autoCompleteTextFieldManualDataSource != nil {
-            // Manually supplied suggestion
-            let suggestion = autoCompleteTextFieldManualDataSource?.autoCompleteTextField(self, suggestionFor: queryString) ?? ""
-            
-            return processSuggestion(suggestion, queryString: queryString)
-        } else {
-            guard let autoCompleteTextFieldDataSource = autoCompleteTextFieldDataSource else { return processDataSource(SupportedDomainNames, queryString: queryString) }
-            // Original implementation
-            let dataSource = autoCompleteTextFieldDataSource.autoCompleteTextFieldDataSource(self)
-            
-            return processDataSource(dataSource, queryString: queryString)
-        }
+        guard let autoCompleteTextFieldDataSource = autoCompleteTextFieldDataSource else { return processDataSource(SupportedDomainNames, queryString: queryString) }
+        // Original implementation
+        let dataSource = autoCompleteTextFieldDataSource.autoCompleteTextFieldDataSource(self)
+        
+        return processDataSource(dataSource, queryString: queryString)
     }
     
     fileprivate func processSuggestion(_ suggestedString: String, queryString: String) -> String {
@@ -200,32 +189,35 @@ open class AutoCompleteTextField: UITextField {
         return performStringReplacement(suggestedString, stringFilter: stringFilter)
     }
     
-    fileprivate func processDataSource(_ dataSource: [String], queryString: String) -> String {
+    fileprivate func processDataSource(_ dataSource: [ACTFWeightedDomain], queryString: String) -> String {
         
         let stringFilter = ignoreCase ? queryString.lowercased() : queryString
-        let suggestedStrings: [String] = dataSource.filter { (suggestedString) -> Bool in
+        let suggestedDomains = dataSource.filter { (domain) -> Bool in
             if ignoreCase {
-                return suggestedString.lowercased().hasPrefix(stringFilter)
+                return domain.text.lowercased().contains(stringFilter)
             }else{
-                return suggestedString.hasPrefix(stringFilter)
+                return domain.text.contains(stringFilter)
             }
         }
         
-        if suggestedStrings.isEmpty {
+        if suggestedDomains.isEmpty {
             return ""
         }
         
         if isRandomSuggestion {
-            let maxCount = suggestedStrings.count
+            let maxCount = suggestedDomains.count
             let randomIdx = arc4random_uniform(UInt32(maxCount))
-            let suggestedString = suggestedStrings[Int(randomIdx)]
+            let suggestedDomain = suggestedDomains[Int(randomIdx)]
             
-            return performStringReplacement(suggestedString, stringFilter: stringFilter)
+            return performStringReplacement(suggestedDomain.text, stringFilter: stringFilter)
         }else{
             
-            let suggestedString = suggestedStrings.sorted(by: { (elementOne, elementTwo) -> Bool in
-                return elementOne.characters.count < elementTwo.characters.count
-            }).first ?? ""
+            let suggestedDomain = suggestedDomains.sorted(by: { (domain1, domain2) -> Bool in
+                return domain1.weight > domain2.weight && domain1.text < domain2.text
+            }).first
+            
+            let suggestedString = suggestedDomain?.text ?? ""
+            
             return performStringReplacement(suggestedString, stringFilter: stringFilter)
         }
     }

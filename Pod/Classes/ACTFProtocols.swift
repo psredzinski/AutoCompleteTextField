@@ -9,21 +9,13 @@
 import Foundation
 import UIKit
 
-// MARK: - AutoCompleteTextField Manual Protocol
-
-public protocol AutoCompleteTextFieldManualDataSource: AutoCompleteTextFieldDataSource {
-    
-    // Add ability to provide suggestion manually
-    func autoCompleteTextField(_ autoCompleteTextField: AutoCompleteTextField, suggestionFor text: String) -> String?
-}
-
 // MARK: - AutoCompleteTextField Protocol
 
 public protocol AutoCompleteTextFieldDataSource: NSObjectProtocol {
     
     // Required protocols
     
-    func autoCompleteTextFieldDataSource(_ autoCompleteTextField: AutoCompleteTextField) -> [String] // called when in need of suggestions.
+    func autoCompleteTextFieldDataSource(_ autoCompleteTextField: AutoCompleteTextField) -> [ACTFWeightedDomain] // called when in need of suggestions.
 }
 
 @objc public protocol AutoCompleteTextFieldDelegate: UITextFieldDelegate {
