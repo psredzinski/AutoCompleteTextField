@@ -14,7 +14,7 @@ public protocol ACTFWeightedDomain {
     var weight: Int { get set }
 }
 
-open class ACTFDomain: ACTFWeightedDomain {
+public class ACTFDomain: ACTFWeightedDomain {
     
     public let text: String
     public var weight: Int

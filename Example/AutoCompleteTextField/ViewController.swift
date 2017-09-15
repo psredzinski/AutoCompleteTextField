@@ -35,7 +35,7 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
         // Do any additional setup after loading the view, typically from a nib.
         
         // Optional setting for delegate if not setted in IB
-        //        txtEmail.autoCompleteTextFieldDataSource = self
+        // txtEmail.autoCompleteTextFieldDataSource = self
         txtReEmail.autoCompleteTextFieldDataSource = self
         
         txtEmail.setDelimiter("@")
@@ -59,6 +59,11 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
         let g4 = ACTFDomain(text: "georgetown.edu", weight: 1)
         weightedDomains = [g1, g2, g3, g4]
         
+        /** 
+         Using a custom object that comforms to protocol `ACTFWeightedDomain`
+         */
+        let g5 = CustomACTFDomain(customText: "google.com.ph", customWeight: 4, customObject: self)
+        weightedDomains.append(g5)
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,5 +96,23 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
         return true
     }
     
+}
+
+/** Custom class comforming to ACTFWeightedDomain */
+
+class CustomACTFDomain: ACTFWeightedDomain {
+    
+    let text: String
+    var weight: Int
+
+    var customObject: AnyObject!
+    
+    public init(customText t: String, customWeight w: Int, customObject c: AnyObject! = nil) {
+        
+        text = t
+        weight = w
+        
+        customObject = c
+    }
 }
 
