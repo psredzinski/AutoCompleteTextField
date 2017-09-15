@@ -63,7 +63,7 @@ myTextField.showAutoCompleteButton(autoCompleteButtonViewMode: .WhileEditing)
 // Then provide your data source to get the suggestion from inputs
 func autoCompleteTextFieldDataSource(autoCompleteTextField: AutoCompleteTextField) -> [String] {
         
-    return AutoCompleteTextField.domainNames // ["gmail.com", "hotmail.com", "domain.net"]
+    return AutoCompleteTextField.domainNames // [ACTFDomain(text: "gmail.com", weight: 0), ACTFDomain(text: "hotmail.com", weight: 0), ACTFDomain(text: "domain.net", weight: 0)]
 }
 
 // Initializing with datasource
@@ -71,11 +71,11 @@ let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 
 
 ```
 
-## AutoCompleteTextFieldManualDataSource
+## ACTFDomain
 
-AutoCompleteTextFieldManualDataSource conforms to the AutoCompleteTextFieldDataSource so all the functionality is the same with the added ability to manually provide autocomplete suggestions.
+`ACTFDomain` conforms to the `ACTFWeightedDomain`. User can manually add a custom weighted class that conforms to `ACTFWeightedDomain`.
 
-Use the AutoCompleteTextFieldManualDataSource when providing a suggestion that is found through custom sorting. Going off the original example of email domain suggestions, the default suggestions are chosen in alphabetical order from the provided array. However, for better user experience we may want certain email domains to show up first if they are more popular. 
+Use the `ACTFWeightedDomain` when providing a suggestion that is found through custom sorting for better user experience where we add a weight usage to the domains to show up first if they are more popular. 
 
 One example may be 'gmail.com' and 'georgetown.edu'. Users are more likely to have a 'gmail.com' account so we would want that to show up before 'georgetown.edu', even though that is out of alphabetical order. 
 
@@ -83,27 +83,30 @@ This is just one example. Manually providing a suggestion gives more flexibility
 
 ```Swift
 
-// Subclass a TextField with 'AutoCompleteTextField'
-let myTextField = AutoCompleteTextField(frame: CGRectMake(0, 0, 100, 30))
+class CustomACTFDomain: ACTFWeightedDomain {
 
-// Set dataSource, it can be setted from the XCode IB like TextFieldDelegate
-myTextField.autoCompleteTextFieldManualDataSource = self
+    let text: String
+    var weight: Int
 
-// Manually provide a suggestion for the textfield
-func autoCompleteTextField(_ autoCompleteTextField: AutoCompleteTextField, suggestionFor text: String) -> String? {
-        
-    // weightedDomains = [WeightedDomain(text: "gmail.com", weight: 10), WeightedDomain(text: "georgetown.edu", weight: 1)]
+    var customObject: AnyObject!
 
-    let lowered = text.lowercased()
-    let filtered = weightedDomains.filter { (domain) -> Bool in
-        return domain.text.lowercased().contains(lowered)
-    }.sorted { (d1, d2) -> Bool in
-        return d1.weight > d2.weight && d1.text < d2.text
+    public init(customText t: String, customWeight w: Int, customObject c: AnyObject! = nil) {
+
+        text = t
+        weight = w
+
+        customObject = c
     }
-
-    // when 'g' is typed 'gmail.com' will be chosen instead of 'georgetown.edu' becasue of weight
-    return filtered.first?.text
 }
+
+// Usage
+let g1 = ACTFDomain(text: "gmail.com", weight: 10)
+let g2 = ACTFDomain(text: "googlemail.com", weight: 5)
+let g3 = ACTFDomain(text: "google.com", weight: 4)
+let g4 = ACTFDomain(text: "georgetown.edu", weight: 1)
+let g5 = CustomACTFDomain(customText: "google.com.ph", customWeight: 4, customObject: self)
+
+let weightedDomains = [g1, g2, g3, g4, g5] // [ACTFWeightedDomain]
 
 ```
 

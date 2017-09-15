@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "AutoCompleteTextField"
-  s.version          = "0.2.4"
+  s.version          = "0.2.5"
   s.summary          = "TextField Subclass with auto completion feature."
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
 
-  "A TextField Subclass that has input suggestion for user's convenience where auto completion feature kicks in where the suggestions are from filtered data from the provided source of the user."
+  "A TextField Subclass that has input suggestion for user's convenience, when auto completion feature kicks in, it uses the suggestions from the datasource provided by the user or from the default domain."
 
                           DESC
 
