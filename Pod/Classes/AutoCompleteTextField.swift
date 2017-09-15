@@ -15,6 +15,9 @@ open class AutoCompleteTextField: UITextField {
     /// AutoCompleteTextField data source
     open weak var autoCompleteTextFieldDataSource: AutoCompleteTextFieldDataSource?
     
+    /// Manual AutoCompleteTextFieldDataSource
+    open weak var autoCompleteTextFieldManualDataSource: AutoCompleteTextFieldManualDataSource?
+    
     // AutoCompleteTextField data source accessible through IB
     @IBOutlet weak internal var dataSource: AnyObject! {
         didSet {
@@ -177,11 +180,24 @@ open class AutoCompleteTextField: UITextField {
     fileprivate func performStringSuggestionsSearch(_ queryString: String) -> String {
         
         // handle nil data source
-        guard let autoCompleteTextFieldDataSource = autoCompleteTextFieldDataSource else { return processDataSource(SupportedDomainNames, queryString: queryString) }
+        if autoCompleteTextFieldManualDataSource != nil {
+            // Manually supplied suggestion
+            let suggestion = autoCompleteTextFieldManualDataSource?.autoCompleteTextField(self, suggestionFor: queryString) ?? ""
+            
+            return processSuggestion(suggestion, queryString: queryString)
+        } else {
+            guard let autoCompleteTextFieldDataSource = autoCompleteTextFieldDataSource else { return processDataSource(SupportedDomainNames, queryString: queryString) }
+            // Original implementation
+            let dataSource = autoCompleteTextFieldDataSource.autoCompleteTextFieldDataSource(self)
+            
+            return processDataSource(dataSource, queryString: queryString)
+        }
+    }
+    
+    fileprivate func processSuggestion(_ suggestedString: String, queryString: String) -> String {
         
-        let dataSource = autoCompleteTextFieldDataSource.autoCompleteTextFieldDataSource(self)
-        
-        return processDataSource(dataSource, queryString: queryString)
+        let stringFilter = ignoreCase ? queryString.lowercased() : queryString
+        return performStringReplacement(suggestedString, stringFilter: stringFilter)
     }
     
     fileprivate func processDataSource(_ dataSource: [String], queryString: String) -> String {
@@ -198,7 +214,7 @@ open class AutoCompleteTextField: UITextField {
         if suggestedStrings.isEmpty {
             return ""
         }
-
+        
         if isRandomSuggestion {
             let maxCount = suggestedStrings.count
             let randomIdx = arc4random_uniform(UInt32(maxCount))
@@ -206,7 +222,7 @@ open class AutoCompleteTextField: UITextField {
             
             return performStringReplacement(suggestedString, stringFilter: stringFilter)
         }else{
-
+            
             let suggestedString = suggestedStrings.sorted(by: { (elementOne, elementTwo) -> Bool in
                 return elementOne.characters.count < elementTwo.characters.count
             }).first ?? ""
