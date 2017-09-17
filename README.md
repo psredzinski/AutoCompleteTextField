@@ -58,7 +58,7 @@ myTextField.setDelimiter("@")
 myTextField.autoCompleteTextFieldDelegate = YourDelegate
 
 // Setting an autocompletion button with text field events
-myTextField.showAutoCompleteButton(autoCompleteButtonViewMode: .WhileEditing)
+myTextField.showAutoCompleteButton(UIImage(named: "checked"), viewMode: .whileEditing)
 
 // Then provide your data source to get the suggestion from inputs
 func autoCompleteTextFieldDataSource(autoCompleteTextField: AutoCompleteTextField) -> [String] {
@@ -75,7 +75,7 @@ let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 
 
 `ACTFDomain` conforms to the `ACTFWeightedDomain`. User can manually add a custom weighted class that conforms to `ACTFWeightedDomain`.
 
-Use the `ACTFWeightedDomain` when providing a suggestion that is found through custom sorting for better user experience where we add a weight usage to the domains to show up first if they are more popular. 
+Use the `ACTFWeightedDomain` when providing a suggestion that is found through custom sorting for better user experience where we add a weight usage to the domains to show up first if they are more popular. Weight will be dynamically updated with `updateWeightUsage()` which will be triggered upon successful use of domain.
 
 One example may be 'gmail.com' and 'georgetown.edu'. Users are more likely to have a 'gmail.com' account so we would want that to show up before 'georgetown.edu', even though that is out of alphabetical order. 
 
@@ -96,6 +96,10 @@ class CustomACTFDomain: ACTFWeightedDomain {
         weight = w
 
         customObject = c
+    }
+
+    func updateWeightUsage() {
+        weight += 1
     }
 }
 
