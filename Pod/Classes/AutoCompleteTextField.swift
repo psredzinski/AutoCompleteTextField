@@ -31,7 +31,7 @@ open class AutoCompleteTextField: UITextField {
         get { return autoCompleteTextFieldDelegate }
     }
     
-    fileprivate var autoCompleteLbl: UILabel!
+    fileprivate var autoCompleteLbl: ACTFLabel!
     fileprivate var delimiter: CharacterSet?
     
     fileprivate var xOffsetCorrection: CGFloat {
@@ -143,7 +143,6 @@ open class AutoCompleteTextField: UITextField {
         if !autoCompleteDisabled {
             autoCompleteLbl.isHidden = true
             
-            processAutoCompleteEvent()
             commitAutocompleteText()
         }
         
@@ -154,7 +153,7 @@ open class AutoCompleteTextField: UITextField {
     // MARK: - Private Funtions
     fileprivate func prepareLayers() {
         
-        autoCompleteLbl = UILabel(frame: .zero)
+        autoCompleteLbl = ACTFLabel(frame: .zero)
         addSubview(autoCompleteLbl)
         
         autoCompleteLbl.font = font
@@ -174,22 +173,16 @@ open class AutoCompleteTextField: UITextField {
         super.delegate = self
     }
     
-    fileprivate func performStringSuggestionsSearch(_ queryString: String) -> String {
+    fileprivate func performDomainSuggestionsSearch(_ queryString: String) -> ACTFWeightedDomain! {
         
         guard let autoCompleteTextFieldDataSource = autoCompleteTextFieldDataSource else { return processDataSource(SupportedDomainNames, queryString: queryString) }
-        // Original implementation
+        
         let dataSource = autoCompleteTextFieldDataSource.autoCompleteTextFieldDataSource(self)
         
         return processDataSource(dataSource, queryString: queryString)
     }
     
-    fileprivate func processSuggestion(_ suggestedString: String, queryString: String) -> String {
-        
-        let stringFilter = ignoreCase ? queryString.lowercased() : queryString
-        return performStringReplacement(suggestedString, stringFilter: stringFilter)
-    }
-    
-    fileprivate func processDataSource(_ dataSource: [ACTFWeightedDomain], queryString: String) -> String {
+    fileprivate func processDataSource(_ dataSource: [ACTFWeightedDomain], queryString: String) -> ACTFWeightedDomain! {
         
         let stringFilter = ignoreCase ? queryString.lowercased() : queryString
         let suggestedDomains = dataSource.filter { (domain) -> Bool in
@@ -201,7 +194,7 @@ open class AutoCompleteTextField: UITextField {
         }
         
         if suggestedDomains.isEmpty {
-            return ""
+            return nil
         }
         
         if isRandomSuggestion {
@@ -209,27 +202,25 @@ open class AutoCompleteTextField: UITextField {
             let randomIdx = arc4random_uniform(UInt32(maxCount))
             let suggestedDomain = suggestedDomains[Int(randomIdx)]
             
-            return performStringReplacement(suggestedDomain.text, stringFilter: stringFilter)
+            return suggestedDomain
         }else{
             
-            let suggestedDomain = suggestedDomains.sorted(by: { (domain1, domain2) -> Bool in
+            guard let suggestedDomain = suggestedDomains.sorted(by: { (domain1, domain2) -> Bool in
                 return domain1.weight > domain2.weight && domain1.text < domain2.text
-            }).first
+            }).first else { return nil }
             
-            let suggestedString = suggestedDomain?.text ?? ""
-            
-            return performStringReplacement(suggestedString, stringFilter: stringFilter)
+            return suggestedDomain
         }
     }
     
-    fileprivate func performStringReplacement(_ suggestedString: String, stringFilter: String) -> String {
-        guard let filterRange = ignoreCase ? suggestedString.lowercased().range(of: stringFilter) : suggestedString.range(of: stringFilter) else { return "" }
+    fileprivate func performTextCull(domain: ACTFWeightedDomain, stringFilter: String) -> String {
+        guard let filterRange = ignoreCase ? domain.text.lowercased().range(of: stringFilter) : domain.text.range(of: stringFilter) else { return "" }
         
-        let finalString = suggestedString.replacingCharacters(in: filterRange, with: "")
-        return finalString
+        let culledString = domain.text.replacingCharacters(in: filterRange, with: "")
+        return culledString
     }
     
-    fileprivate func autocompleteBoundingRect(_ autocompleteString: String) -> CGRect {
+    fileprivate func actfBoundingRect(_ autocompleteString: String) -> CGRect {
         
         // get bounds for whole text area
         let textRectBounds = textRect(forBounds: bounds)
@@ -284,26 +275,41 @@ open class AutoCompleteTextField: UITextField {
             
             guard let textToLookFor = textComponents.last else { return }
             
-            let autocompleteString = performStringSuggestionsSearch(textToLookFor)
-            updateAutocompleteLabel(autocompleteString)
+            let domain = performDomainSuggestionsSearch(textToLookFor)
+            updateAutocompleteLabel(domain: domain, originalString: textToLookFor)
         }else{
-            let autocompleteString = performStringSuggestionsSearch(textString)
-            updateAutocompleteLabel(autocompleteString)
+            let domain = performDomainSuggestionsSearch(textString)
+            updateAutocompleteLabel(domain: domain, originalString: textString)
         }
     }
     
-    fileprivate func updateAutocompleteLabel(_ autocompleteString: String) {
-        autoCompleteLbl.text = autocompleteString
+    fileprivate func updateAutocompleteLabel(domain: ACTFWeightedDomain!, originalString stringFilter: String) {
+        
+        guard let domain = domain else {
+            autoCompleteLbl.text = ""
+            autoCompleteLbl.sizeToFit()
+            
+            return
+        }
+        
+        let culledString = performTextCull(domain: domain, stringFilter: stringFilter)
+        
+        autoCompleteLbl.domain = domain
+        autoCompleteLbl.text = culledString
         autoCompleteLbl.sizeToFit()
-        autoCompleteLbl.frame = autocompleteBoundingRect(autocompleteString)
+        autoCompleteLbl.frame = actfBoundingRect(culledString)
     }
     
     fileprivate func commitAutocompleteText() {
-        guard let autocompleteString = autoCompleteLbl.text , !autocompleteString.isEmpty else { return }
+        guard let autoCompleteString = autoCompleteLbl.text , !autoCompleteString.isEmpty else { return }
         let originalInputString = text ?? ""
         
         autoCompleteLbl.text = ""
-        text = originalInputString + autocompleteString
+        autoCompleteLbl.sizeToFit()
+        autoCompleteLbl.domain.updateWeightUsage()
+        autoCompleteLbl.domain = nil
+        
+        text = originalInputString + autoCompleteString
         sendActions(for: .valueChanged)
     }
     
@@ -312,7 +318,6 @@ open class AutoCompleteTextField: UITextField {
     internal func autoCompleteButtonDidTapped(_ sender: UIButton) {
         endEditing(true)
         
-        processAutoCompleteEvent()
         commitAutocompleteText()
     }
     
@@ -320,7 +325,6 @@ open class AutoCompleteTextField: UITextField {
         
         processAutoCompleteEvent()
     }
-    
     
     // MARK: - Public Controls
     

@@ -45,8 +45,8 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
         txtReEmail.autoCompleteTextFieldDelegate = self
         
         // Show right side complete button
-        txtEmail.showAutoCompleteButtonWithImage(viewMode: .whileEditing)
-        txtReEmail.showAutoCompleteButtonWithImage(viewMode: .whileEditing)
+        txtEmail.showAutoCompleteButtonWithImage(UIImage(named: "checked"), viewMode: .whileEditing)
+        txtReEmail.showAutoCompleteButtonWithImage(UIImage(named: "checked"), viewMode: .whileEditing)
         
         // Initializing with datasource and delegate
         /*let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), autoCompleteTextFieldDataSource: self)
@@ -75,7 +75,7 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
     
     func autoCompleteTextFieldDataSource(_ autoCompleteTextField: AutoCompleteTextField) -> [ACTFWeightedDomain] {
         
-        return AutoCompleteTextField.domainNames // domainNames
+        return weightedDomains // AutoCompleteTextField.domainNames // domainNames
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -101,7 +101,7 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
 /** Custom class comforming to ACTFWeightedDomain */
 
 class CustomACTFDomain: ACTFWeightedDomain {
-    
+
     let text: String
     var weight: Int
 
@@ -113,6 +113,10 @@ class CustomACTFDomain: ACTFWeightedDomain {
         weight = w
         
         customObject = c
+    }
+    
+    func updateWeightUsage() {
+        weight += 1
     }
 }
 

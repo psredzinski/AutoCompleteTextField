@@ -12,6 +12,8 @@ public protocol ACTFWeightedDomain {
     
     var text: String { get }
     var weight: Int { get set }
+    
+    func updateWeightUsage()
 }
 
 public class ACTFDomain: ACTFWeightedDomain {
