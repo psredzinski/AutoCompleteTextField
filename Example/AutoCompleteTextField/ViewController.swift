@@ -9,7 +9,7 @@
 import UIKit
 import AutoCompleteTextField
 
-class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCompleteTextFieldDelegate {
+class ViewController: UIViewController, ACTFDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var txtEmail: AutoCompleteTextField!
     @IBOutlet weak var txtReEmail: AutoCompleteTextField!
@@ -35,23 +35,23 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
         // Do any additional setup after loading the view, typically from a nib.
         
         // Optional setting for delegate if not setted in IB
-        // txtEmail.autoCompleteTextFieldDataSource = self
-        txtReEmail.autoCompleteTextFieldDataSource = self
+        // txtEmail.dataSource = self
+        txtReEmail.dataSource = self
         
         txtEmail.setDelimiter("@")
         txtReEmail.setDelimiter("@")
         
-        txtEmail.autoCompleteTextFieldDelegate = self
-        txtReEmail.autoCompleteTextFieldDelegate = self
+        txtEmail.delegate = self
+        txtReEmail.delegate = self
         
         // Show right side complete button
         txtEmail.showAutoCompleteButtonWithImage(UIImage(named: "checked"), viewMode: .whileEditing)
         txtReEmail.showAutoCompleteButtonWithImage(UIImage(named: "checked"), viewMode: .whileEditing)
         
         // Initializing with datasource and delegate
-        /*let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), autoCompleteTextFieldDataSource: self)
-         textFieldWithDelegateAndDataSource.backgroundColor = .red
-         view.addSubview(textFieldWithDelegateAndDataSource)*/
+        /*let actfWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), dataSource: self, delegate: self)
+        actfWithDelegateAndDataSource.backgroundColor = .red
+        view.addSubview(actfWithDelegateAndDataSource)*/
         
         let g1 = ACTFDomain(text: "gmail.com", weight: 10)
         let g2 = ACTFDomain(text: "googlemail.com", weight: 5)
@@ -62,7 +62,7 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
         /** 
          Using a custom object that comforms to protocol `ACTFWeightedDomain`
          */
-        let g5 = CustomACTFDomain(customText: "google.com.ph", customWeight: 4, customObject: self)
+        let g5 = CustomACTFDomain(customText: "custom.com", customWeight: 4, customObject: self)
         weightedDomains.append(g5)
     }
     
@@ -71,13 +71,15 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - AutoCompleteTextFieldDataSource
+    // MARK: - ACTFDataSource
     
     func autoCompleteTextFieldDataSource(_ autoCompleteTextField: AutoCompleteTextField) -> [ACTFWeightedDomain] {
         
         return weightedDomains // AutoCompleteTextField.domainNames // domainNames
     }
     
+    // MARK: - UITextFieldDelegate
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField == txtEmail {
@@ -88,14 +90,6 @@ class ViewController: UIViewController, AutoCompleteTextFieldDataSource, AutoCom
             return txtPassword.resignFirstResponder()
         }
     }
-    
-    func textField(_ textField: UITextField, changeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        
-        print("tf: \(textField.text!) \(string)")
-        
-        return true
-    }
-    
 }
 
 /** Custom class comforming to ACTFWeightedDomain */

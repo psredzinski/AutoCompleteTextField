@@ -13,10 +13,10 @@ public protocol ACTFWeightedDomain {
     var text: String { get }
     var weight: Int { get set }
     
-    func updateWeightUsage()
+    mutating func updateWeightUsage()
 }
 
-public class ACTFDomain: ACTFWeightedDomain {
+public struct ACTFDomain: ACTFWeightedDomain {
     
     public let text: String
     public var weight: Int
@@ -27,7 +27,7 @@ public class ACTFDomain: ACTFWeightedDomain {
         weight = w
     }
     
-    public func updateWeightUsage() {
+    public mutating func updateWeightUsage() {
         
         weight += 1
     }

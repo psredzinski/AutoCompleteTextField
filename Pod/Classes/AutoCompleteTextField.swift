@@ -13,25 +13,16 @@ import UIKit
 open class AutoCompleteTextField: UITextField {
     
     /// AutoCompleteTextField data source
-    open weak var autoCompleteTextFieldDataSource: AutoCompleteTextFieldDataSource?
+    weak open var dataSource: ACTFDataSource?
     
     /// AutoCompleteTextField data source accessible through IB
-    @IBOutlet weak internal var dataSource: AnyObject! {
+    @IBOutlet weak internal var actfDataSource: AnyObject? {
         didSet {
-            autoCompleteTextFieldDataSource = dataSource as? AutoCompleteTextFieldDataSource
+            dataSource = actfDataSource as? ACTFDataSource
         }
     }
     
-    /// AutoCompleteTextField delegate
-    open weak var autoCompleteTextFieldDelegate: AutoCompleteTextFieldDelegate!
-    
-    /// AutoCompleteTextField delegate accessible through IB
-    weak open override var delegate: UITextFieldDelegate? {
-        set (x) { autoCompleteTextFieldDelegate = x as? AutoCompleteTextFieldDelegate }
-        get { return autoCompleteTextFieldDelegate }
-    }
-    
-    fileprivate var autoCompleteLbl: ACTFLabel!
+    fileprivate var actfLabel: ACTFLabel!
     fileprivate var delimiter: CharacterSet?
     
     fileprivate var xOffsetCorrection: CGFloat {
@@ -76,14 +67,15 @@ open class AutoCompleteTextField: UITextField {
     
     /// Text font settings
     override open var font: UIFont? {
-        didSet { autoCompleteLbl.font = font }
+        didSet { actfLabel.font = font }
     }
     
     override open var textColor: UIColor? {
         didSet {
-            autoCompleteLbl.textColor = textColor?.withAlphaComponent(0.5)
+            actfLabel.textColor = textColor?.withAlphaComponent(0.5)
         }
     }
+    
     
     // MARK: - Initialization
     
@@ -102,11 +94,11 @@ open class AutoCompleteTextField: UITextField {
     }
     
     /// Initialize `AutoCompleteTextField` with `AutoCompleteTextFieldDataSource` and optional `AutoCompleteTextFieldDelegate`
-    convenience public init(frame: CGRect, autoCompleteTextFieldDataSource dataSource: AutoCompleteTextFieldDataSource, autoCompleteTextFieldDelegate delegate: AutoCompleteTextFieldDelegate! = nil) {
+    convenience public init(frame: CGRect, dataSource source: ACTFDataSource? = nil, delegate d: UITextFieldDelegate? = nil) {
         self.init(frame: frame)
         
-        autoCompleteTextFieldDataSource = dataSource
-        autoCompleteTextFieldDelegate = delegate
+        dataSource = source
+        delegate = d
         
         prepareLayers()
         setupTargetObserver()
@@ -125,10 +117,10 @@ open class AutoCompleteTextField: UITextField {
         let becomeFirstResponder = super.becomeFirstResponder()
         
         if !autoCompleteDisabled {
-            autoCompleteLbl.isHidden = false
+            actfLabel.isHidden = false
             
             if clearsOnBeginEditing {
-                autoCompleteLbl.text = ""
+                actfLabel.text = ""
             }
             
             processAutoCompleteEvent()
@@ -141,48 +133,43 @@ open class AutoCompleteTextField: UITextField {
         let resignFirstResponder = super.resignFirstResponder()
         
         if !autoCompleteDisabled {
-            autoCompleteLbl.isHidden = true
+            actfLabel.isHidden = true
             
             commitAutocompleteText()
         }
         
         return resignFirstResponder
     }
-    
+
     
     // MARK: - Private Funtions
     fileprivate func prepareLayers() {
         
-        autoCompleteLbl = ACTFLabel(frame: .zero)
-        addSubview(autoCompleteLbl)
+        actfLabel = ACTFLabel(frame: .zero)
+        addSubview(actfLabel)
         
-        autoCompleteLbl.font = font
-        autoCompleteLbl.backgroundColor = .clear
-        autoCompleteLbl.textColor = .lightGray
-        autoCompleteLbl.lineBreakMode = .byClipping
-        autoCompleteLbl.baselineAdjustment = .alignCenters
-        autoCompleteLbl.isHidden = true
-        
+        actfLabel.font = font
+        actfLabel.backgroundColor = .clear
+        actfLabel.textColor = .lightGray
+        actfLabel.lineBreakMode = .byClipping
+        actfLabel.baselineAdjustment = .alignCenters
+        actfLabel.isHidden = true
     }
     
     fileprivate func setupTargetObserver() {
         
-        removeTarget(self, action: #selector(AutoCompleteTextField.autoCompleteTextFieldDidChanged(_:)), for: .editingChanged)
         addTarget(self, action: #selector(AutoCompleteTextField.autoCompleteTextFieldDidChanged(_:)), for: .editingChanged)
-        
-        super.delegate = self
     }
     
-    fileprivate func performDomainSuggestionsSearch(_ queryString: String) -> ACTFWeightedDomain! {
+    fileprivate func performDomainSuggestionsSearch(_ queryString: String) -> ACTFWeightedDomain? {
         
-        guard let autoCompleteTextFieldDataSource = autoCompleteTextFieldDataSource else { return processDataSource(SupportedDomainNames, queryString: queryString) }
+        guard let dataSource = dataSource else { return processSourceData(SupportedDomainNames, queryString: queryString) }
+        let sourceData = dataSource.autoCompleteTextFieldDataSource(self)
         
-        let dataSource = autoCompleteTextFieldDataSource.autoCompleteTextFieldDataSource(self)
-        
-        return processDataSource(dataSource, queryString: queryString)
+        return processSourceData(sourceData, queryString: queryString)
     }
     
-    fileprivate func processDataSource(_ dataSource: [ACTFWeightedDomain], queryString: String) -> ACTFWeightedDomain! {
+    fileprivate func processSourceData(_ dataSource: [ACTFWeightedDomain], queryString: String) -> ACTFWeightedDomain? {
         
         let stringFilter = ignoreCase ? queryString.lowercased() : queryString
         let suggestedDomains = dataSource.filter { (domain) -> Bool in
@@ -243,17 +230,17 @@ open class AutoCompleteTextField: UITextField {
         let autoCompleteTextRect = autocompleteString.boundingRect(with: autoCompleteRectSize, options: drawingOptions, attributes: textAttributes, context: nil)
         
         let xOrigin = tRect.maxX + xOffsetCorrection
-        let autoCompleteLblFrame = autoCompleteLbl.frame
+        let actfLabelFrame = actfLabel.frame
         let finalX = xOrigin + autoCompleteTextRect.width
-        let finalY = textRectBounds.minY + ((textRectBounds.height - autoCompleteLblFrame.height) / 2) - yOffsetCorrection
+        let finalY = textRectBounds.minY + ((textRectBounds.height - actfLabelFrame.height) / 2) - yOffsetCorrection
         
         if finalX >= textRectBounds.width {
-            let autoCompleteRect = CGRect(x: textRectBounds.width, y: finalY, width: 0, height: autoCompleteLblFrame.height)
+            let autoCompleteRect = CGRect(x: textRectBounds.width, y: finalY, width: 0, height: actfLabelFrame.height)
             
             return autoCompleteRect
             
         }else{
-            let autoCompleteRect = CGRect(x: xOrigin, y: finalY, width: autoCompleteTextRect.width, height: autoCompleteLblFrame.height)
+            let autoCompleteRect = CGRect(x: xOrigin, y: finalY, width: autoCompleteTextRect.width, height: actfLabelFrame.height)
             
             return autoCompleteRect
         }
@@ -283,31 +270,31 @@ open class AutoCompleteTextField: UITextField {
         }
     }
     
-    fileprivate func updateAutocompleteLabel(domain: ACTFWeightedDomain!, originalString stringFilter: String) {
+    fileprivate func updateAutocompleteLabel(domain: ACTFWeightedDomain?, originalString stringFilter: String) {
         
         guard let domain = domain else {
-            autoCompleteLbl.text = ""
-            autoCompleteLbl.sizeToFit()
+            actfLabel.text = ""
+            actfLabel.sizeToFit()
             
             return
         }
         
         let culledString = performTextCull(domain: domain, stringFilter: stringFilter)
         
-        autoCompleteLbl.domain = domain
-        autoCompleteLbl.text = culledString
-        autoCompleteLbl.sizeToFit()
-        autoCompleteLbl.frame = actfBoundingRect(culledString)
+        actfLabel.domain = domain
+        actfLabel.text = culledString
+        actfLabel.sizeToFit()
+        actfLabel.frame = actfBoundingRect(culledString)
     }
     
     fileprivate func commitAutocompleteText() {
-        guard let autoCompleteString = autoCompleteLbl.text , !autoCompleteString.isEmpty else { return }
+        guard let autoCompleteString = actfLabel.text , !autoCompleteString.isEmpty else { return }
         let originalInputString = text ?? ""
         
-        autoCompleteLbl.text = ""
-        autoCompleteLbl.sizeToFit()
-        autoCompleteLbl.domain.updateWeightUsage()
-        autoCompleteLbl.domain = nil
+        actfLabel.text = ""
+        actfLabel.sizeToFit()
+        actfLabel.domain.updateWeightUsage()
+        actfLabel.domain = nil
         
         text = originalInputString + autoCompleteString
         sendActions(for: .valueChanged)
@@ -323,7 +310,9 @@ open class AutoCompleteTextField: UITextField {
     
     internal func autoCompleteTextFieldDidChanged(_ textField: UITextField) {
         
-        processAutoCompleteEvent()
+        if !autoCompleteDisabled {
+            processAutoCompleteEvent()
+        }
     }
     
     // MARK: - Public Controls
