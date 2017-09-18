@@ -45,35 +45,29 @@ github "nferocious76/AutoCompleteTextField"
 
 ```Swift
 
-// Subclass a TextField with 'AutoCompleteTextField'
-let myTextField = AutoCompleteTextField(frame: CGRectMake(0, 0, 100, 30))
+// Initializing `AutoCompleteTextField` 
+let myTextField = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), dataSource: `YourDataSource`, delegate: `YourDelegate`)
 
-// Set dataSource, it can be setted from the XCode IB like TextFieldDelegate
-myTextField.autoCompleteTextFieldDataSource = self
+// Setting `dataSource`, it can be set from the XCode IB like `TextFieldDelegate` in which will appear as `actfDataSource`
+myTextField.dataSource = `YourDataSource`
 
-// Setting delimiter is optional. If setted, it will only look for suggestion if delimiter is found
+// Setting delimiter (optional). If set, it will only look for suggestion after the delimiter
 myTextField.setDelimiter("@")
 
-// 'autoCompleteTextFieldDelegate' acts like the default 'delegate' which 'delegate' is also accessible to the IB.
-myTextField.autoCompleteTextFieldDelegate = YourDelegate
+// Show `AutoCompleteButton`
+myTextField.showAutoCompleteButtonWithImage(UIImage(named: "checked"), viewMode: .whileEditing)
 
-// Setting an autocompletion button with text field events
-myTextField.showAutoCompleteButton(UIImage(named: "checked"), viewMode: .whileEditing)
+// Providing data source to get the suggestion from inputs
+func autoCompleteTextFieldDataSource(_ autoCompleteTextField: AutoCompleteTextField) -> [ACTFWeightedDomain] {
 
-// Then provide your data source to get the suggestion from inputs
-func autoCompleteTextFieldDataSource(autoCompleteTextField: AutoCompleteTextField) -> [String] {
-        
-    return AutoCompleteTextField.domainNames // [ACTFDomain(text: "gmail.com", weight: 0), ACTFDomain(text: "hotmail.com", weight: 0), ACTFDomain(text: "domain.net", weight: 0)]
+    return weightedDomains // AutoCompleteTextField.domainNames // [ACTFDomain(text: "gmail.com", weight: 0), ACTFDomain(text: "hotmail.com", weight: 0), ACTFDomain(text: "domain.net", weight: 0)]
 }
-
-// Initializing with datasource
-let textFieldWithDelegateAndDataSource = AutoCompleteTextField(frame: CGRect(x: 20, y: 64, width: view.frame.width - 40, height: 40), autoCompleteTextFieldDataSource: self)
 
 ```
 
 ## ACTFDomain
 
-`ACTFDomain` conforms to the `ACTFWeightedDomain`. User can manually add a custom weighted class that conforms to `ACTFWeightedDomain`.
+`ACTFDomain` is struct type that conforms to the `ACTFWeightedDomain`. User can create a weighted custom `Class` or `Struct` that conforms to `ACTFWeightedDomain`.
 
 Use the `ACTFWeightedDomain` when providing a suggestion that is found through custom sorting for better user experience where we add a weight usage to the domains to show up first if they are more popular. Weight will be dynamically updated with `updateWeightUsage()` which will be triggered upon successful use of domain.
 
@@ -83,6 +77,7 @@ This is just one example. Manually providing a suggestion gives more flexibility
 
 ```Swift
 
+// Creating custom class comforming to `ACTFWeightedDomain`
 class CustomACTFDomain: ACTFWeightedDomain {
 
     let text: String

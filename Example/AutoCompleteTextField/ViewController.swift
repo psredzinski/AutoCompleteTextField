@@ -75,7 +75,7 @@ class ViewController: UIViewController, ACTFDataSource, UITextFieldDelegate {
     
     func autoCompleteTextFieldDataSource(_ autoCompleteTextField: AutoCompleteTextField) -> [ACTFWeightedDomain] {
         
-        return weightedDomains // AutoCompleteTextField.domainNames // domainNames
+        return weightedDomains // AutoCompleteTextField.domainNames // [ACTFDomain(text: "gmail.com", weight: 0), ACTFDomain(text: "hotmail.com", weight: 0), ACTFDomain(text: "domain.net", weight: 0)]
     }
     
     // MARK: - UITextFieldDelegate
@@ -92,8 +92,7 @@ class ViewController: UIViewController, ACTFDataSource, UITextFieldDelegate {
     }
 }
 
-/** Custom class comforming to ACTFWeightedDomain */
-
+// Creating custom class comforming to `ACTFWeightedDomain`
 class CustomACTFDomain: ACTFWeightedDomain {
 
     let text: String

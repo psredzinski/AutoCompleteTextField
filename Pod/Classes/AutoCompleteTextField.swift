@@ -322,7 +322,7 @@ open class AutoCompleteTextField: UITextField {
         delimiter = CharacterSet(charactersIn: delimiterString)
     }
     
-    /// Show completion button with custom image
+    /// Show complete button with custom image
     open func showAutoCompleteButtonWithImage(_ image: UIImage? = UIImage(named: "checked", in: Bundle(for: AutoCompleteTextField.self), compatibleWith: nil), viewMode: AutoCompleteButtonViewMode) {
         
         var buttonFrameH: CGFloat = 0.0
