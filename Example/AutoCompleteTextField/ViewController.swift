@@ -68,6 +68,7 @@ class ViewController: UIViewController, ACTFDataSource, UITextFieldDelegate {
             print("Store success")
         }
         
+        // retrieved single
         if let domain = ACTFDomain.retrievedDomainForKey("Domain") {
             print("Retrieved: ", domain)
         }

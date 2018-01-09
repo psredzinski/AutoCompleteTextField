@@ -10,15 +10,16 @@
 
 ## Features
 - [x] Provides a subclass of UITextField that has suggestion from input
-- [x] Data suggestion are provided by users
 - [x] Has autocomplete input feature
+- [x] Data suggestion are provided by users
+- [x] Enable store smart domains
 - [x] Optimized and light weight
 
 
 ## Requirements
 
 - iOS 8.0+ / Mac OS X 10.9+
-- Xcode 7.2+
+- Xcode 9.0+
 
 
 ## Installation
@@ -67,45 +68,45 @@ func autoCompleteTextFieldDataSource(_ autoCompleteTextField: AutoCompleteTextFi
 
 ## ACTFDomain
 
-`ACTFDomain` is struct type that conforms to the `ACTFWeightedDomain`. User can create a weighted custom `Class` or `Struct` that conforms to `ACTFWeightedDomain`.
+`ACTFDomain` is struct type that conforms to the `Codable`. User can store and retrieve smart domains.
 
-Use the `ACTFWeightedDomain` when providing a suggestion that is found through custom sorting for better user experience where we add a weight usage to the domains to show up first if they are more popular. Weight will be dynamically updated with `updateWeightUsage()` which will be triggered upon successful use of domain.
+One example may be 'gmail.com' and 'georgetown.edu'. Users are more likely to have a 'gmail.com' account so we would want that to show up before 'georgetown.edu', even though that is out of alphabetical order.
 
-One example may be 'gmail.com' and 'georgetown.edu'. Users are more likely to have a 'gmail.com' account so we would want that to show up before 'georgetown.edu', even though that is out of alphabetical order. 
+`ACTFDomain` is sorted based on its usage.
 
 This is just one example. Manually providing a suggestion gives more flexibility and does not force the usage of an array of strings. 
 
 ```Swift
-
-// Creating custom class comforming to `ACTFWeightedDomain`
-class CustomACTFDomain: ACTFWeightedDomain {
-
-    let text: String
-    var weight: Int
-
-    var customObject: AnyObject!
-
-    public init(customText t: String, customWeight w: Int, customObject c: AnyObject! = nil) {
-
-        text = t
-        weight = w
-
-        customObject = c
-    }
-
-    func updateWeightUsage() {
-        weight += 1
-    }
-}
 
 // Usage
 let g1 = ACTFDomain(text: "gmail.com", weight: 10)
 let g2 = ACTFDomain(text: "googlemail.com", weight: 5)
 let g3 = ACTFDomain(text: "google.com", weight: 4)
 let g4 = ACTFDomain(text: "georgetown.edu", weight: 1)
-let g5 = CustomACTFDomain(customText: "google.com.ph", customWeight: 4, customObject: self)
 
-let weightedDomains = [g1, g2, g3, g4, g5] // [ACTFWeightedDomain]
+let weightedDomains = [g1, g2, g3, g4] // [ACTFDomain]
+
+// Storing
+
+// store single
+if g1.storeDomainForKey("Domain") {
+    print("Store success")
+}
+
+// store multiple
+if ACTFDomain.storeDomainsForKey(domains: weightedDomains, key: "Domains") {
+    print("Store success")
+}
+
+// retrieved single
+if let domain = ACTFDomain.retrievedDomainForKey("Domain") {
+    print("Retrieved: ", domain)
+}
+
+// retrieved multiple
+if let domains = ACTFDomain.retrievedDomainsForKey("Domains") {
+    print("Retrieved: ", domains)
+}
 
 ```
 
