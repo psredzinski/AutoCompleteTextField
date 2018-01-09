@@ -15,5 +15,5 @@ public protocol ACTFDataSource: NSObjectProtocol {
     
     // Required protocols
     
-    func autoCompleteTextFieldDataSource(_ autoCompleteTextField: AutoCompleteTextField) -> [ACTFWeightedDomain] // called when in need of suggestions.
+    func autoCompleteTextFieldDataSource(_ autoCompleteTextField: AutoCompleteTextField) -> [ACTFDomain] // called when in need of suggestions.
 }

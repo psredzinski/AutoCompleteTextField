@@ -61,7 +61,7 @@ open class AutoCompleteTextField: UITextField {
     open var isRandomSuggestion: Bool = false
     
     /// Supported domain names
-    static open let domainNames: [ACTFWeightedDomain] = {
+    static open let domainNames: [ACTFDomain] = {
         return SupportedDomainNames
     }()
     
@@ -161,7 +161,7 @@ open class AutoCompleteTextField: UITextField {
         addTarget(self, action: #selector(AutoCompleteTextField.autoCompleteTextFieldDidChanged(_:)), for: .editingChanged)
     }
     
-    fileprivate func performDomainSuggestionsSearch(_ queryString: String) -> ACTFWeightedDomain? {
+    fileprivate func performDomainSuggestionsSearch(_ queryString: String) -> ACTFDomain? {
         
         guard let dataSource = dataSource else { return processSourceData(SupportedDomainNames, queryString: queryString) }
         let sourceData = dataSource.autoCompleteTextFieldDataSource(self)
@@ -169,7 +169,7 @@ open class AutoCompleteTextField: UITextField {
         return processSourceData(sourceData, queryString: queryString)
     }
     
-    fileprivate func processSourceData(_ dataSource: [ACTFWeightedDomain], queryString: String) -> ACTFWeightedDomain? {
+    fileprivate func processSourceData(_ dataSource: [ACTFDomain], queryString: String) -> ACTFDomain? {
         
         let stringFilter = ignoreCase ? queryString.lowercased() : queryString
         let suggestedDomains = dataSource.filter { (domain) -> Bool in
@@ -200,7 +200,7 @@ open class AutoCompleteTextField: UITextField {
         }
     }
     
-    fileprivate func performTextCull(domain: ACTFWeightedDomain, stringFilter: String) -> String {
+    fileprivate func performTextCull(domain: ACTFDomain, stringFilter: String) -> String {
         guard let filterRange = ignoreCase ? domain.text.lowercased().range(of: stringFilter) : domain.text.range(of: stringFilter) else { return "" }
         
         let culledString = domain.text.replacingCharacters(in: filterRange, with: "")
@@ -270,7 +270,7 @@ open class AutoCompleteTextField: UITextField {
         }
     }
     
-    fileprivate func updateAutocompleteLabel(domain: ACTFWeightedDomain?, originalString stringFilter: String) {
+    fileprivate func updateAutocompleteLabel(domain: ACTFDomain?, originalString stringFilter: String) {
         
         guard let domain = domain else {
             actfLabel.text = ""

@@ -11,5 +11,5 @@ import UIKit
 
 public class ACTFLabel: UILabel {
     
-    public var domain: ACTFWeightedDomain!
+    public var domain: ACTFDomain!
 }

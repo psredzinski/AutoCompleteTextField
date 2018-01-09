@@ -28,7 +28,7 @@ class ViewController: UIViewController, ACTFDataSource, UITextFieldDelegate {
                        "icloud.com"]
     
     // add weighted domain names
-    var weightedDomains: [ACTFWeightedDomain] = []
+    var weightedDomains: [ACTFDomain] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,11 +59,28 @@ class ViewController: UIViewController, ACTFDataSource, UITextFieldDelegate {
         let g4 = ACTFDomain(text: "georgetown.edu", weight: 1)
         weightedDomains = [g1, g2, g3, g4]
         
-        /** 
-         Using a custom object that comforms to protocol `ACTFWeightedDomain`
-         */
-        let g5 = CustomACTFDomain(customText: "custom.com", customWeight: 4, customObject: self)
-        weightedDomains.append(g5)
+        // save
+        do {
+            let data = try PropertyListEncoder().encode(weightedDomains)
+            let eData = NSKeyedArchiver.archivedData(withRootObject: data)
+            UserDefaults.standard.set(eData, forKey: "Domains")
+        }catch{
+            print("Save Failed")
+        }
+        
+        // retrieved
+        do {
+            guard let seData = UserDefaults.standard.object(forKey: "Domains") as? Data,
+                let dData = NSKeyedUnarchiver.unarchiveObject(with: seData) as? Data else {
+                print("Retrieve Failed")
+                return
+            }
+            let tTmp = try PropertyListDecoder().decode([ACTFDomain].self, from: dData)
+            
+            print("Retrieved", tTmp)
+        }catch{
+            print("Retrieve Failed")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,7 +90,7 @@ class ViewController: UIViewController, ACTFDataSource, UITextFieldDelegate {
     
     // MARK: - ACTFDataSource
     
-    func autoCompleteTextFieldDataSource(_ autoCompleteTextField: AutoCompleteTextField) -> [ACTFWeightedDomain] {
+    func autoCompleteTextFieldDataSource(_ autoCompleteTextField: AutoCompleteTextField) -> [ACTFDomain] {
         
         return weightedDomains // AutoCompleteTextField.domainNames // [ACTFDomain(text: "gmail.com", weight: 0), ACTFDomain(text: "hotmail.com", weight: 0), ACTFDomain(text: "domain.net", weight: 0)]
     }
@@ -89,27 +106,6 @@ class ViewController: UIViewController, ACTFDataSource, UITextFieldDelegate {
         } else {
             return txtPassword.resignFirstResponder()
         }
-    }
-}
-
-// Creating custom class comforming to `ACTFWeightedDomain`
-class CustomACTFDomain: ACTFWeightedDomain {
-
-    let text: String
-    var weight: Int
-
-    var customObject: AnyObject!
-    
-    public init(customText t: String, customWeight w: Int, customObject c: AnyObject! = nil) {
-        
-        text = t
-        weight = w
-        
-        customObject = c
-    }
-    
-    func updateWeightUsage() {
-        weight += 1
     }
 }
 
