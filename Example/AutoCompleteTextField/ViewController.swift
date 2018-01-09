@@ -59,27 +59,22 @@ class ViewController: UIViewController, ACTFDataSource, UITextFieldDelegate {
         let g4 = ACTFDomain(text: "georgetown.edu", weight: 1)
         weightedDomains = [g1, g2, g3, g4]
         
-        // save
-        do {
-            let data = try PropertyListEncoder().encode(weightedDomains)
-            let eData = NSKeyedArchiver.archivedData(withRootObject: data)
-            UserDefaults.standard.set(eData, forKey: "Domains")
-        }catch{
-            print("Save Failed")
+        // store single
+        if g1.storeDomainForKey("Domain") {
+            print("Store success")
+        }
+        // store multiple
+        if ACTFDomain.storeDomainsForKey(domains: weightedDomains, key: "Domains") {
+            print("Store success")
         }
         
-        // retrieved
-        do {
-            guard let seData = UserDefaults.standard.object(forKey: "Domains") as? Data,
-                let dData = NSKeyedUnarchiver.unarchiveObject(with: seData) as? Data else {
-                print("Retrieve Failed")
-                return
-            }
-            let tTmp = try PropertyListDecoder().decode([ACTFDomain].self, from: dData)
-            
-            print("Retrieved", tTmp)
-        }catch{
-            print("Retrieve Failed")
+        if let domain = ACTFDomain.retrievedDomainForKey("Domain") {
+            print("Retrieved: ", domain)
+        }
+        
+        // retrieved multiple
+        if let domains = ACTFDomain.retrievedDomainsForKey("Domains") {
+            print("Retrieved: ", domains)
         }
     }
     
