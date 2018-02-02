@@ -70,12 +70,11 @@ open class AutoCompleteTextField: UITextField {
         didSet { actfLabel.font = font }
     }
     
-    override open var textColor: UIColor? {
+    open var suggestionColor: UIColor? {
         didSet {
-            actfLabel.textColor = textColor?.withAlphaComponent(0.5)
+            actfLabel.textColor = suggestionColor
         }
     }
-    
     
     // MARK: - Initialization
     
